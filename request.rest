@@ -1,0 +1,28 @@
+GET http://localhost:5000/api/profile
+//Get ALL Profiles
+
+###
+POST http://localhost:5000/api/tutors
+Content-Type: application/json
+
+{
+  "name":"Bob Dylan",
+  "email":"bobdylan@email.com",
+  "password":"password",
+  "password2":"password"
+}
+//Register Tutor
+
+###
+POST http://localhost:5000/api/auth
+Content-Type: application/json
+
+{
+  "email":"danem7@gmail.com",
+  "password":"dane1234"
+}
+//Login Tutor
+
+###
+GET http://localhost:5000/api/profile/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0dXRvciI6eyJpZCI6IjVmNTBhNzg0ZDA1NjFlMmMzODA2ZTNkMCJ9LCJpYXQiOjE1OTk2Mjc4NDh9.8J2JBqsXggg8XGow442NtS5YB74AxTgTRs9xTN6nfIc
