@@ -1,11 +1,8 @@
 import React from 'react';
+import NewFooter from '../components/Footer/NewFooter';
 
 const Contact = () => {
-  return (
-    <div>
-      <h1>contact page</h1>
-    </div>
-  );
+  return <NewFooter />;
 };
 
 export default Contact;

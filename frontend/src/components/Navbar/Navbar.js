@@ -8,7 +8,7 @@ import {
   FaUser,
   FaArrowCircleRight,
 } from 'react-icons/fa';
-import logo2 from '../../assets/images/main-logo.png';
+import logo2 from '../../assets/studyWizards/main-logo.png';
 import { useSelector } from 'react-redux';
 import { logout } from '../../features/auth/auth';
 

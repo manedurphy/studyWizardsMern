@@ -15,41 +15,40 @@ const Profile = () => {
     <>
       <div className="container ">
         <div className="row">
-          <h3 className="col-12 my-4 text-center">Your Profile</h3>
           {profile && (
             <>
               <div className="col-4">
                 <img src={profile.img} className=" profile-img" />
               </div>
               <div className="col-8">
+                <h1 style={{ fontSize: '20px', marginBottom: '15px' }}>
+                  Your Profile
+                </h1>
                 <h4>Bio</h4>
                 <p>{profile.bio}</p>
                 <hr />
-                <h4>Education</h4>
-                <ul className="edu-list">
-                  {' '}
-                  <div className="edu-list-item">
-                    <li>{profile.education.school}</li>
-                  </div>
-                  <div className="edu-list-item">
-                    <li>{profile.education.degree}</li>
-                  </div>
+                <div className="education-container">
+                  <h4>Education</h4>
+                  <p>{profile.education.school}</p>
+                  <p>{profile.education.degree}</p>
                   <hr />
-                </ul>
+                </div>
                 {profile && (
                   <>
                     <h4>Subjects</h4>
                     <ul className="profile-subject-list">
                       {profile.subjects.map((subject, index) => (
-                        <li className="mx-1" key={index}>
-                          {subject}
-                        </li>
+                        <li key={index}>{subject}</li>
                       ))}
                     </ul>
                     <hr />
                   </>
                 )}
-                <Link to="/edit-profile" className="btn btn-secondary">
+                <Link
+                  to="/edit-profile"
+                  className="button"
+                  style={{ color: '#fff' }}
+                >
                   Edit Profile
                 </Link>
               </div>

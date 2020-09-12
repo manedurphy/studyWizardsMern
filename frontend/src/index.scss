@@ -1,3 +1,12 @@
+// @import './assets//sass//libs/vars';
+// @import './assets//sass//libs/functions';
+// @import './assets//sass//libs/mixins';
+// @import './assets//sass//libs/vendor';
+// @import './assets//sass//libs/breakpoints';
+// @import './assets//sass//libs/html-grid';
+// @import url('fontawesome-all.min.css');
+// @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,900');
+
 //Globals
 body {
   margin: 0;
@@ -42,13 +51,13 @@ nav {
   min-height: 650px;
 }
 
-#intro {
-  background-image: url('./assets//images/home-hero.jpeg');
-}
+// #intro {
+//   background-image: url('./assets/studyWizards/home-hero.jpeg');
+// }
 
-#intro2 {
-  background-image: url('./assets/images/courses-hero.jpeg');
-}
+// #intro2 {
+//   background-image: url('./assets/studyWizards/courses-hero.jpeg');
+// }
 
 .welcome-banner,
 .courses-banner {
@@ -246,3 +255,59 @@ ul {
     transform: rotate(360deg);
   }
 }
+
+// // TEMPLATE STYLING //
+
+// /* Header */
+
+// #header {
+//   @include vendor('display', 'flex');
+//   @include vendor('align-items', 'center');
+//   @include vendor('justify-content', 'center');
+//   position: relative;
+//   height: 24em;
+//   background: url('./assets/themeImages/banner.jpg') center center;
+//   background-size: cover;
+//   padding: 0;
+
+//   &:before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     // background: url('./assets/themeImages/');
+//   }
+
+//   .homepage & {
+//     height: 35em;
+//   }
+// }
+
+// /* Logo */
+
+// #logo {
+//   width: 100%;
+//   text-align: center;
+//   position: relative;
+//   top: 1.5em;
+
+//   h1 {
+//     font-weight: 900;
+//     text-transform: uppercase;
+//     color: #fff;
+//     font-size: 2em;
+//     letter-spacing: 0.25em;
+//   }
+
+//   p {
+//     color: #eee;
+//     color: rgba(255, 255, 255, 0.5);
+//     text-transform: uppercase;
+//     margin: 1.25em 0 0 0;
+//     display: block;
+//     letter-spacing: 0.2em;
+//     font-size: 0.9em;
+//   }
+// }

@@ -16,6 +16,7 @@ const EditProfile = ({ history }) => {
     imageUrl: profile.img,
     online: profile.services.online,
     person: profile.services.inPerson,
+    honors: profile.services.honors,
   });
 
   const dispatch = useDispatch();
@@ -45,6 +46,7 @@ const EditProfile = ({ history }) => {
       services: {
         online: formData.online,
         inPerson: formData.person,
+        honors: formData.honors,
       },
     };
 
@@ -54,9 +56,10 @@ const EditProfile = ({ history }) => {
   return (
     <>
       <div className="create-profile-form mx-auto text-center my-3 container">
-        <h3 className="">Edit Your Profile</h3>
+        <h3 style={{ marginBottom: '15px' }}>Edit Your Profile</h3>
         <form className="form" onSubmit={onSubmitHandler}>
           <div className="form-group">
+            <label>Name of Higher Education Institution</label>
             <input
               type="text"
               name="school"
@@ -64,12 +67,10 @@ const EditProfile = ({ history }) => {
               onChange={changeHandler}
               value={formData.school}
             />
-            <br />
-            <small>
-              enter the institution of your highest level of education
-            </small>
+            <small>e.g. San Jose State University</small>
           </div>
           <div className="form-group">
+            <label>Your Major</label>
             <input
               type="text"
               name="degree"
@@ -77,10 +78,10 @@ const EditProfile = ({ history }) => {
               onChange={changeHandler}
               value={formData.degree}
             />
-            <br />
             <small>e.g. Bachelor's Degree in Chemistry</small>
           </div>
           <div className="form-group">
+            <label>Subjects You Can Tutor</label>
             <input
               type="text"
               name="subjects"
@@ -88,11 +89,11 @@ const EditProfile = ({ history }) => {
               onChange={changeHandler}
               value={formData.subjects}
             />
-            <br />
             <small>
               enter each subject with a space in between and no commas
             </small>
           </div>
+          <br />
           <div className="form-group">
             <textarea
               type="text"
@@ -104,7 +105,7 @@ const EditProfile = ({ history }) => {
               value={formData.bio}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group" style={{ margin: '45px 0' }}>
             <input
               type="text"
               name="imageUrl"
@@ -121,9 +122,7 @@ const EditProfile = ({ history }) => {
               checked={formData.online}
               onChange={checkboxHandler}
             />
-            <label htmlFor="online" className="pl-2">
-              I can tutor online
-            </label>
+            <label htmlFor="online">I can tutor online</label>
           </div>
           <div className="form-group checkbox">
             <input
@@ -133,11 +132,21 @@ const EditProfile = ({ history }) => {
               checked={formData.person}
               onChange={checkboxHandler}
             />
-            <label htmlFor="online" className="pl-2">
-              I can tutor in person
-            </label>
+            <label htmlFor="person">I can tutor in person</label>
           </div>
-          <button type="submit">Submit</button>
+          <div className="form-group checkbox">
+            <input
+              type="checkbox"
+              id="honors"
+              name="honors"
+              checked={formData.honors}
+              onChange={checkboxHandler}
+            />
+            <label htmlFor="honors">I can tutor honors and AP courses</label>
+          </div>
+          <button type="submit" style={{ color: '#fff' }}>
+            Submit
+          </button>
         </form>
       </div>
     </>

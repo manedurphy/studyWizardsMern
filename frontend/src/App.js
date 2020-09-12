@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react';
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
-import Home from './pages/Home';
-import Navbar from './components/Navbar/Navbar';
-import Courses from './pages/Courses';
 import Course from './pages/Course';
 import { Route } from 'react-router-dom';
 import { authorized } from './features/auth/auth';
@@ -13,6 +10,11 @@ import Profile from './pages/Profile';
 import CreateProfile from './components/ProfileForms/CreateProfile';
 import EditProfile from './components/ProfileForms/EditProfile';
 import PrivateRoute from './components/routing/PrivateRoute';
+import NewNavbar from './components/Navbar/NewNavbar';
+import NewHome from './pages/NewHome';
+import NewCourses from './pages/NewCourses';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -29,11 +31,13 @@ function App() {
   });
 
   return (
-    <div className="App">
-      <Navbar />
-      <Route exact path="/" component={Home} />
-      <Route exact path="/courses" component={Courses} />
+    <div className="App" id="page-wrapper">
+      <NewNavbar />
+      <Route exact path="/" component={NewHome} />
+      <Route exact path="/courses" component={NewCourses} />
+      <Route exact path="/about" component={About} />
       <Route path="/courses/:id" component={Course} />
+      <Route exact path="/contact-us" component={Contact} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/login" component={Login} />
       <PrivateRoute exact path="/profile" component={Profile} />

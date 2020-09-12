@@ -23,8 +23,8 @@ const Login = () => {
   };
   return (
     <>
-      <section className="container  login">
-        <h1 className="text-center">Log In</h1>
+      <section className="container login">
+        <h1>Log In</h1>
         <form onSubmit={submitHandler}>
           <div className="form-group">
             <label>Email address</label>
@@ -49,8 +49,8 @@ const Login = () => {
             />
           </div>
           <div className="text-center">
-            <button type="submit" className="btn btn-primary ">
-              Submit
+            <button type="submit" className="sign-in-btn">
+              Sign In
             </button>
           </div>
           <div className="mt-5 text-center">

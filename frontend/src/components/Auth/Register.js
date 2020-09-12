@@ -83,8 +83,8 @@ const Register = ({ history }) => {
             />
           </div>
           <div className="text-center">
-            <button type="submit" className="btn btn-primary ">
-              Submit
+            <button type="submit" className="sign-up-btn ">
+              Sign Up
             </button>
           </div>
           <div className="mt-5">

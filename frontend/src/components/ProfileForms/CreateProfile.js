@@ -12,6 +12,7 @@ const CreateProfile = () => {
     imageUrl: '',
     online: false,
     person: false,
+    honors: false,
   });
 
   const dispatch = useDispatch();
@@ -44,6 +45,7 @@ const CreateProfile = () => {
       services: {
         online: formData.online,
         inPerson: formData.person,
+        honors: formData.honors,
       },
     };
     dispatch(createProfile(body));
@@ -54,39 +56,40 @@ const CreateProfile = () => {
         <h3 className="">Create Your Profile</h3>
         <form className="form" onSubmit={onSubmitHandler}>
           <div className="form-group">
+            <label>Name of Higher Education Institution</label>
             <input
               type="text"
               name="school"
               placeholder="School"
               onChange={changeHandler}
             />
-            <br />
             <small>
               enter the institution of your highest level of education
             </small>
           </div>
           <div className="form-group">
+            <label>Your Major</label>
             <input
               type="text"
               name="degree"
               placeholder="Degree"
               onChange={changeHandler}
             />
-            <br />
             <small>e.g. Bachelor's Degree in Chemistry</small>
           </div>
           <div className="form-group">
+            <label>Subjects You Can Tutor</label>
             <input
               type="text"
               name="subjects"
               placeholder="subjects"
               onChange={changeHandler}
             />
-            <br />
             <small>
               enter each subject with a space in between and no commas
             </small>
           </div>
+          <label>Your Profile Bio</label>
           <div className="form-group">
             <textarea
               type="text"
@@ -98,7 +101,8 @@ const CreateProfile = () => {
               value={formData.bio}
             />
           </div>
-          <div className="form-group">
+          <br />
+          <div className="form-group" style={{ margin: '45px 0' }}>
             <input
               type="text"
               name="imageUrl"
@@ -114,9 +118,7 @@ const CreateProfile = () => {
               checked={formData.online}
               onChange={checkboxHandler}
             />
-            <label htmlFor="online" className="pl-2">
-              I can tutor online
-            </label>
+            <label htmlFor="online">I can tutor online</label>
           </div>
           <div className="form-group checkbox">
             <input
@@ -126,11 +128,21 @@ const CreateProfile = () => {
               checked={formData.person}
               onChange={checkboxHandler}
             />
-            <label htmlFor="online" className="pl-2">
-              I can tutor in person
-            </label>
+            <label htmlFor="person">I can tutor in person</label>
           </div>
-          <button type="submit">Submit</button>
+          <div className="form-group checkbox">
+            <input
+              type="checkbox"
+              id="honors"
+              name="honors"
+              checked={formData.honors}
+              onChange={checkboxHandler}
+            />
+            <label htmlFor="honors">I can tutor honors and AP courses</label>
+          </div>
+          <button type="submit" className="button" style={{ color: '#fff' }}>
+            Submit
+          </button>
         </form>
       </div>
       {profile && <Redirect to="/profile" />}
