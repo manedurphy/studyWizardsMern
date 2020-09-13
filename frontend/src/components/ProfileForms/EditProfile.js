@@ -6,7 +6,7 @@ import {
 import { useSelector, useDispatch } from 'react-redux';
 
 const EditProfile = ({ history }) => {
-  const { profile } = useSelector((state) => state.profile);
+  const { profile, errors } = useSelector((state) => state.profile);
 
   const [formData, setFormData] = useState({
     school: profile.education.school,
@@ -35,28 +35,31 @@ const EditProfile = ({ history }) => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    const body = {
-      education: {
-        school: formData.school,
-        degree: formData.degree,
-      },
-      subjects: formData.subjects.trim().split(' '),
-      bio: formData.bio,
-      img: formData.imageUrl,
-      services: {
-        online: formData.online,
-        inPerson: formData.person,
-        honors: formData.honors,
-      },
-    };
-
-    dispatch(updateProfile(body, history));
+    dispatch(updateProfile(formData, history));
   };
 
   return (
     <>
       <div className="create-profile-form mx-auto text-center my-3 container">
-        <h3 style={{ marginBottom: '15px' }}>Edit Your Profile</h3>
+        <div
+          className="div"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            fontSize: '2rem',
+            marginTop: '2rem',
+          }}
+        >
+          <h3 style={{ marginBottom: '15px' }}>Edit Your Profile</h3>
+        </div>
+        {errors.length > 0 &&
+          errors.map((item, index) => {
+            return (
+              <div className="user-message-error" key={index}>
+                {item.msg}
+              </div>
+            );
+          })}
         <form className="form" onSubmit={onSubmitHandler}>
           <div className="form-group">
             <label>Name of Higher Education Institution</label>

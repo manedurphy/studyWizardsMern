@@ -4,6 +4,7 @@ import LeftSidebar from '../components/MidSection/LeftSidebar';
 import michaelImg from '../assets/studyWizards/goldstein_pic.jpg';
 import resenburgImg from '../assets/studyWizards/resenburg_pic.jpg';
 import kahanImg from '../assets/studyWizards/kahan_pic.jpg';
+import NewNavbar from '../components/Navbar/NewNavbar';
 
 const About = () => {
   const sidebar = {
@@ -26,8 +27,14 @@ const About = () => {
     p3:
       'Mrs. Rosenberg is a graduate of St. Johns University, Hofstra University, and State University of New York; her degrees and licenses from New York State include Elementary Education, Reading, Special Education, School Administration, and School Psychology. She has also actively participated in the Reading and Writing Workshop at Columbia University Teachers College. Mrs. Rosenberg has worked for more than 35 years developing her craft as an educator and teacher, and she has received several awards for her efforts. She began teaching in Manhattan and subsequently taught in elementary education at Syosset Schools, on Long Island, N.Y. Mrs. Rosenberg also worked with students at the League for the Hard of Hearing weekend program. After receiving her master’s degree as a Reading Specialist, Mrs. Rosenberg moved to Syosset’s Special Education Department, where she devoted her efforts to a wide range of programs, including starting both a high school Writing Lab and a resource room for a kindergarten program. Currently, Study Wizards has the benefit of Mrs. Rosenberg’s diverse experience; and she is available to discuss your student’s needs and the goals you have for your student.',
   };
+
+  const navInfo = {
+    heading: 'Study Wizards Private Tutoring',
+    subheading: 'Personalized For Success',
+  };
   return (
     <>
+      <NewNavbar info={navInfo} />
       <LeftSidebar info={sidebar} />
       <NewFooter />
     </>

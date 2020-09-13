@@ -1,12 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import setAuthToken from '../../components/util/setAuthToken';
+import { v4 as uuid } from 'uuid';
 
 const profileSlice = createSlice({
   name: 'profile',
   initialState: {
     profile: null,
     loading: true,
+    errors: [],
   },
   reducers: {
     getProfileSuccess: (state, action) => {
@@ -25,6 +27,15 @@ const profileSlice = createSlice({
       state.profile = action.payload;
       state.laoding = false;
     },
+    addError: (state, action) => {
+      state.errors.push(action.payload);
+    },
+    removeError: (state, action) => {
+      const removeIndex = state.errors.findIndex(
+        (err) => err.id === action.payload
+      );
+      state.errors.splice(removeIndex, 1);
+    },
   },
 });
 
@@ -33,6 +44,8 @@ export const {
   createProfileSuccess,
   clearProfile,
   updateProfileSuccess,
+  addError,
+  removeError,
 } = profileSlice.actions;
 
 export const getCurrentProfile = () => async (dispatch) => {
@@ -50,13 +63,31 @@ export const getCurrentProfile = () => async (dispatch) => {
 };
 
 export const createProfile = (body) => async (dispatch) => {
-  console.log(body);
-  const res = await axios.post('/api/profile', JSON.stringify(body), {
-    headers: { 'Content-Type': 'application/json' },
-  });
+  try {
+    const res = await axios.post('/api/profile', JSON.stringify(body), {
+      headers: { 'Content-Type': 'application/json' },
+    });
 
-  console.log(res.data);
-  dispatch(createProfileSuccess(res.data));
+    console.log(res.data);
+    dispatch(createProfileSuccess(res.data));
+  } catch (error) {
+    const errors = error.response.data.errors;
+
+    if (errors) {
+      errors.forEach((err) => {
+        const id = uuid();
+        dispatch(
+          addError({
+            msg: err.msg,
+            id,
+          })
+        );
+        setTimeout(() => {
+          dispatch(removeError(id));
+        }, 4000);
+      });
+    }
+  }
 };
 
 export const updateProfile = (body, history) => async (dispatch) => {
@@ -68,7 +99,22 @@ export const updateProfile = (body, history) => async (dispatch) => {
     dispatch(updateProfileSuccess(res.data));
     history.push('/profile');
   } catch (error) {
-    console.log(error);
+    const errors = error.response.data.errors;
+
+    if (errors) {
+      errors.forEach((err) => {
+        const id = uuid();
+        dispatch(
+          addError({
+            msg: err.msg,
+            id,
+          })
+        );
+        setTimeout(() => {
+          dispatch(removeError(id));
+        }, 4000);
+      });
+    }
   }
 };
 

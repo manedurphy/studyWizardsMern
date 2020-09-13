@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NewFooter = () => {
+const NewFooter = (props) => {
   let today = new Date();
   let year = today.getFullYear();
 
@@ -17,6 +17,8 @@ const NewFooter = () => {
               <br />
               Nam pharetra laoreet imperdiet volutpat etiam feugiat.
             </p>
+            <br />
+            {props.btn && <div>{props.btn}</div>}
           </header>
           <div className="row">
             <div className="col-6 col-12-medium">
@@ -55,6 +57,7 @@ const NewFooter = () => {
                             type="submit"
                             className="style1"
                             value="Send"
+                            style={{ background: '#60479c' }}
                           />
                         </li>
                         <li>

@@ -3,18 +3,19 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../../features/auth/auth';
 
-const NewNavbar = () => {
+const NewNavbar = ({ info }) => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
+  const { heading, subheading } = info;
 
   return (
     <>
       <section id="header" className="wrapper">
         <div id="logo">
           <h1>
-            <Link to="/">Study Wizards Private Tutoring</Link>
+            <Link to="/">{heading}</Link>
           </h1>
-          <p>Personalized For Success</p>
+          <p>{subheading}</p>
         </div>
         <nav id="nav">
           <ul>
@@ -27,9 +28,15 @@ const NewNavbar = () => {
             <li>
               <Link to="/courses">Courses</Link>
             </li>
-            <li>
-              <Link to="/contact-us">Contact Us</Link>
-            </li>
+            {isAuthenticated ? (
+              <li>
+                <Link to="/profile">Profile</Link>
+              </li>
+            ) : (
+              <li>
+                <Link to="/contact-us">Contact Us</Link>
+              </li>
+            )}
             {isAuthenticated ? (
               <li>
                 <Link to="/login" onClick={() => dispatch(logout())}>

@@ -6,6 +6,8 @@ import girlComputer from '../assets/studyWizards/online-computer-girl.jpg';
 import kidsWriting from '../assets/studyWizards/kids-writing.jpeg';
 import mathCalculator from '../assets/studyWizards/math-calculator.jpg';
 import NewFooter from '../components/Footer/NewFooter';
+import { Link } from 'react-router-dom';
+import NewNavbar from '../components/Navbar/NewNavbar';
 
 const NewHome = () => {
   const intro = {
@@ -22,14 +24,29 @@ const NewHome = () => {
     img1: girlComputer,
     img2: kidsWriting,
     img3: mathCalculator,
+    link1: 'Online Tutoring',
+    link2: 'Reading & Writing',
+    link3: 'Math & Science',
     desc1: 'Tutoring that fits the needs of you and your child',
     desc2:
       "Writing experts guaranteed to improve your child's communcation abilities",
     desc3: 'Passionate Math and Science tutors that will inspire your child',
   };
 
+  const paths = {
+    path1: 'online-tutoring',
+    path2: 'courses/',
+    path3: 'courses/',
+  };
+
+  const navInfo = {
+    heading: 'Study Wizards Private Tutoring',
+    subheading: 'Personalized For Success',
+  };
+
   return (
     <>
+      <NewNavbar info={navInfo} />
       {/* Intro */}
       <Intro info={intro} />
       {/* Main */}
@@ -122,13 +139,13 @@ const NewHome = () => {
             </div>
             <ul className="actions special">
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/contact-us"
                   className="button style1 large"
                   style={{ background: '#60479c', color: 'white' }}
                 >
                   Get Started
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="button style2 large">
@@ -140,7 +157,7 @@ const NewHome = () => {
         </div>
       </section>
 
-      <Highlights info={highlights} />
+      <Highlights info={highlights} paths={paths} />
       <NewFooter />
     </>
   );

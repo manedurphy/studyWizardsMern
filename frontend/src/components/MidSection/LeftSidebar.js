@@ -18,14 +18,14 @@ const LeftSidebar = ({ info }) => {
     mainSubheading,
   } = info;
   return (
-    <section id="main" class="wrapper style2">
-      <div class="title">{tag}</div>
-      <div class="container">
-        <div class="row gtr-150">
-          <div class="col-4 col-12-medium">
+    <section id="main" className="wrapper style2">
+      <div className="title">{tag}</div>
+      <div className="container">
+        <div className="row gtr-150">
+          <div className="col-4 col-12-medium">
             {/* Sidebar */}
             <div id="sidebar">
-              <section class="box">
+              <section className="box">
                 <header>
                   <h2>Ipsum nullam luctus</h2>
                 </header>
@@ -34,18 +34,18 @@ const LeftSidebar = ({ info }) => {
                   consequat leo suscipit ut. Praesent id turpis vitae turpis
                   pretium ultricies. Vestibulum sit amet risus elit.
                 </p>
-                <a href="#" class="button style1">
+                <a href="#" className="button style1">
                   Learn More
                 </a>
               </section>
-              <section class="box">
+              <section className="box">
                 <header>
                   <h2>{leftHeading1}</h2>
                 </header>
-                <ul class="style2">
+                <ul className="style2">
                   <li>
-                    <article class="box post-excerpt">
-                      <a href="#" class="image left">
+                    <article className="box post-excerpt">
+                      <a href="#" className="image left">
                         <img src={img1} alt="" />
                       </a>
                       <h3>
@@ -58,8 +58,8 @@ const LeftSidebar = ({ info }) => {
                     </article>
                   </li>
                   <li>
-                    <article class="box post-excerpt">
-                      <a href="#" class="image left">
+                    <article className="box post-excerpt">
+                      <a href="#" className="image left">
                         <img src={img2} alt="" />
                       </a>
                       <h3>
@@ -72,8 +72,8 @@ const LeftSidebar = ({ info }) => {
                     </article>
                   </li>
                   <li>
-                    <article class="box post-excerpt">
-                      <a href="#" class="image left">
+                    <article className="box post-excerpt">
+                      <a href="#" className="image left">
                         <img src={img3} alt="" />
                       </a>
                       <h3>
@@ -86,15 +86,15 @@ const LeftSidebar = ({ info }) => {
                     </article>
                   </li>
                 </ul>
-                <a href="#" class="button style1">
+                <a href="#" className="button style1">
                   Archives
                 </a>
               </section>
-              <section class="box">
+              <section className="box">
                 <header>
                   <h2>{leftHeading2}</h2>
                 </header>
-                <ul class="style3">
+                <ul className="style3">
                   <li>
                     <a href="#">Nulla iaculis egestas varius</a>
                   </li>
@@ -132,15 +132,15 @@ const LeftSidebar = ({ info }) => {
               </section>
             </div>
           </div>
-          <div class="col-8 col-12-medium imp-medium">
+          <div className="col-8 col-12-medium imp-medium">
             {/* Content */}
             <div id="content">
-              <article class="box post">
-                <header class="style1">
+              <article className="box post">
+                <header className="style1">
                   <h2>{mainHeading}</h2>
                   <p>{mainSubheading}</p>
                 </header>
-                <a href="#" class="image featured">
+                <a href="#" className="image featured">
                   <img src="images/pic01.jpg" alt="" />
                 </a>
                 <h2>{heading1}</h2>
@@ -150,13 +150,13 @@ const LeftSidebar = ({ info }) => {
                 <h2>{heading3}</h2>
                 <p>{p3}</p>
               </article>
-              <div class="row gtr-150">
-                <div class="col-6 col-12-small">
-                  <section class="box">
+              <div className="row gtr-150">
+                <div className="col-6 col-12-small">
+                  <section className="box">
                     <header>
                       <h2>Magna pulvinar tempus</h2>
                     </header>
-                    <a href="#" class="image featured">
+                    <a href="#" className="image featured">
                       <img src="images/pic05.jpg" alt="" />
                     </a>
                     <p>
@@ -164,17 +164,17 @@ const LeftSidebar = ({ info }) => {
                       commodo tempor. Vivamus eget urna nibh. Curabitur non
                       fringilla nisl. Donec accumsan interdum nisi, quis tempus.
                     </p>
-                    <a href="#" class="button style1">
+                    <a href="#" className="button style1">
                       More
                     </a>
                   </section>
                 </div>
-                <div class="col-6 col-12-small">
-                  <section class="box">
+                <div className="col-6 col-12-small">
+                  <section className="box">
                     <header>
                       <h2>Magna pulvinar tempus</h2>
                     </header>
-                    <a href="#" class="image featured">
+                    <a href="#" className="image featured">
                       <img src="images/pic06.jpg" alt="" />
                     </a>
                     <p>
@@ -182,7 +182,7 @@ const LeftSidebar = ({ info }) => {
                       commodo tempor. Vivamus eget urna nibh. Curabitur non
                       fringilla nisl. Donec accumsan interdum nisi, quis tempus.
                     </p>
-                    <a href="#" class="button style1">
+                    <a href="#" className="button style1">
                       More
                     </a>
                   </section>

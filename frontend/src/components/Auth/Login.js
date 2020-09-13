@@ -52,6 +52,13 @@ const Login = () => {
             <button type="submit" className="sign-in-btn">
               Sign In
             </button>
+            <Link
+              to="/"
+              className="button"
+              style={{ marginLeft: '1rem', color: '#fff' }}
+            >
+              Back Home
+            </Link>
           </div>
           <div className="mt-5 text-center">
             <p>

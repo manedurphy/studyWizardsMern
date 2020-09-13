@@ -10,7 +10,6 @@ import Profile from './pages/Profile';
 import CreateProfile from './components/ProfileForms/CreateProfile';
 import EditProfile from './components/ProfileForms/EditProfile';
 import PrivateRoute from './components/routing/PrivateRoute';
-import NewNavbar from './components/Navbar/NewNavbar';
 import NewHome from './pages/NewHome';
 import NewCourses from './pages/NewCourses';
 import About from './pages/About';
@@ -32,7 +31,6 @@ function App() {
 
   return (
     <div className="App" id="page-wrapper">
-      <NewNavbar />
       <Route exact path="/" component={NewHome} />
       <Route exact path="/courses" component={NewCourses} />
       <Route exact path="/about" component={About} />

@@ -8,25 +8,29 @@ const tutorsSlice = createSlice({
     loading: true,
   },
   reducers: {
-    success: (state, action) => {
+    successTutors: (state, action) => {
       action.payload.forEach((tutor) => state.tutors.push(tutor));
       state.loading = false;
     },
-    fail: (state, action) => {
+    failTutors: (state, action) => {
       state.loading = false;
+    },
+    clearTutors: (state) => {
+      state.tutors = [];
     },
   },
 });
 
-const { success, fail } = tutorsSlice.actions;
+const { successTutors, failTutors, clearTutors } = tutorsSlice.actions;
 
 export const getTutors = () => async (dispatch) => {
   try {
     const res = await axios.get('/api/profile');
-    dispatch(success(res.data));
+    dispatch(clearTutors());
+    dispatch(successTutors(res.data));
   } catch (error) {
     console.error(error.message);
-    dispatch(fail());
+    dispatch(failTutors());
   }
 };
 

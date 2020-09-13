@@ -16,8 +16,7 @@ const CreateProfile = () => {
   });
 
   const dispatch = useDispatch();
-  const { profile } = useSelector((state) => state.profile);
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const { profile, errors } = useSelector((state) => state.profile);
 
   useEffect(() => {
     dispatch(getCurrentProfile());
@@ -34,26 +33,45 @@ const CreateProfile = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    const body = {
-      education: {
-        school: formData.school,
-        degree: formData.degree,
-      },
-      subjects: formData.subjects.trim().split(' '),
-      bio: formData.bio,
-      img: formData.imageUrl,
-      services: {
-        online: formData.online,
-        inPerson: formData.person,
-        honors: formData.honors,
-      },
-    };
-    dispatch(createProfile(body));
+    // const body =
+    // {
+    //   education: {
+    //     school: formData.school,
+    //     degree: formData.degree,
+    //   },
+    //   subjects: formData.subjects.trim().split(' '),
+    //   bio: formData.bio,
+    //   img: formData.imageUrl,
+    //   services: {
+    //     online: formData.online,
+    //     inPerson: formData.person,
+    //     honors: formData.honors,
+    //   },
+    // };
+    dispatch(createProfile(formData));
   };
   return (
     <>
       <div className="create-profile-form mx-auto text-center my-3 container">
-        <h3 className="">Create Your Profile</h3>
+        <div
+          className="div"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            fontSize: '2rem',
+            marginTop: '2rem',
+          }}
+        >
+          <h3 className="">Create Your Profile</h3>
+        </div>
+        {errors.length > 0 &&
+          errors.map((item, index) => {
+            return (
+              <div className="user-message-error" key={index}>
+                {item.msg}
+              </div>
+            );
+          })}
         <form className="form" onSubmit={onSubmitHandler}>
           <div className="form-group">
             <label>Name of Higher Education Institution</label>
@@ -62,6 +80,7 @@ const CreateProfile = () => {
               name="school"
               placeholder="School"
               onChange={changeHandler}
+              required
             />
             <small>
               enter the institution of your highest level of education
@@ -74,6 +93,7 @@ const CreateProfile = () => {
               name="degree"
               placeholder="Degree"
               onChange={changeHandler}
+              required
             />
             <small>e.g. Bachelor's Degree in Chemistry</small>
           </div>
@@ -84,6 +104,7 @@ const CreateProfile = () => {
               name="subjects"
               placeholder="subjects"
               onChange={changeHandler}
+              required
             />
             <small>
               enter each subject with a space in between and no commas
@@ -99,6 +120,7 @@ const CreateProfile = () => {
               cols="56"
               onChange={changeHandler}
               value={formData.bio}
+              required
             />
           </div>
           <br />
@@ -108,6 +130,7 @@ const CreateProfile = () => {
               name="imageUrl"
               placeholder="Image URL"
               onChange={changeHandler}
+              required
             />
           </div>
           <div className="form-group checkbox">
