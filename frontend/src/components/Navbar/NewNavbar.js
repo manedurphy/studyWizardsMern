@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../../features/auth/auth';
+import Dropdown from '../Dropdown/Dropdown';
 
 const NewNavbar = ({ info }) => {
+  const [dropdown, setDropdown] = useState(false);
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
   const { heading, subheading } = info;
+
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
 
   return (
     <>
@@ -22,8 +40,13 @@ const NewNavbar = ({ info }) => {
             <li className="current">
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li
+              className="opener"
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+            >
               <Link to="/about">About Us</Link>
+              {dropdown && <Dropdown />}
             </li>
             <li>
               <Link to="/courses">Courses</Link>

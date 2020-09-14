@@ -23,11 +23,27 @@ const tutorsSlice = createSlice({
 
 const { successTutors, failTutors, clearTutors } = tutorsSlice.actions;
 
-export const getTutors = () => async (dispatch) => {
+export const getTutors = (category, subjects) => async (dispatch) => {
   try {
     const res = await axios.get('/api/profile');
+    const filteredTutors = [];
+
+    const tutorTeachesCategory = (tutor) => {
+      let result = false;
+
+      subjects.forEach((subject) => {
+        if (tutor.subjects.indexOf(subject) !== -1) {
+          result = true;
+        }
+      });
+
+      return result && filteredTutors.push(tutor);
+    };
+
+    res.data.forEach((item) => tutorTeachesCategory(item));
+
     dispatch(clearTutors());
-    dispatch(successTutors(res.data));
+    dispatch(successTutors(filteredTutors));
   } catch (error) {
     console.error(error.message);
     dispatch(failTutors());

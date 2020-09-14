@@ -9,6 +9,12 @@ const LeftSidebar = ({ info }) => {
     heading1,
     heading2,
     heading3,
+    btnHeadingLeft,
+    btnHeadingRight,
+    btnP1,
+    btnP2,
+    icon1,
+    icon2,
     p1,
     p2,
     p3,
@@ -34,7 +40,11 @@ const LeftSidebar = ({ info }) => {
                   consequat leo suscipit ut. Praesent id turpis vitae turpis
                   pretium ultricies. Vestibulum sit amet risus elit.
                 </p>
-                <a href="#" className="button style1">
+                <a
+                  href="#"
+                  className="button style1"
+                  style={{ background: '#60479c' }}
+                >
                   Learn More
                 </a>
               </section>
@@ -86,7 +96,11 @@ const LeftSidebar = ({ info }) => {
                     </article>
                   </li>
                 </ul>
-                <a href="#" className="button style1">
+                <a
+                  href="#"
+                  className="button style1"
+                  style={{ background: '#60479c' }}
+                >
                   Archives
                 </a>
               </section>
@@ -154,36 +168,44 @@ const LeftSidebar = ({ info }) => {
                 <div className="col-6 col-12-small">
                   <section className="box">
                     <header>
-                      <h2>Magna pulvinar tempus</h2>
+                      <h2>
+                        {btnHeadingLeft}
+                        {icon1}
+                      </h2>
                     </header>
                     <a href="#" className="image featured">
                       <img src="images/pic05.jpg" alt="" />
                     </a>
-                    <p>
-                      Rutrum bibendum. Proin pellentesque diam non ligula
-                      commodo tempor. Vivamus eget urna nibh. Curabitur non
-                      fringilla nisl. Donec accumsan interdum nisi, quis tempus.
-                    </p>
-                    <a href="#" className="button style1">
-                      More
+                    <p>{btnP1}</p>
+                    <a
+                      href="https://www.yelp.com/biz/study-wizards-tutoring-san-jose-2?utm_medium=badge_star_rating_reviews&utm_source=biz_review_badge"
+                      target="_blank"
+                      className="button style1"
+                      style={{ background: '#60479c' }}
+                    >
+                      Read More
                     </a>
                   </section>
                 </div>
                 <div className="col-6 col-12-small">
                   <section className="box">
                     <header>
-                      <h2>Magna pulvinar tempus</h2>
+                      <h2>
+                        {btnHeadingRight}
+                        {icon2}
+                      </h2>
                     </header>
-                    <a href="#" className="image featured">
+                    <a href="#" target="_blank" className="image featured">
                       <img src="images/pic06.jpg" alt="" />
                     </a>
-                    <p>
-                      Rutrum bibendum. Proin pellentesque diam non ligula
-                      commodo tempor. Vivamus eget urna nibh. Curabitur non
-                      fringilla nisl. Donec accumsan interdum nisi, quis tempus.
-                    </p>
-                    <a href="#" className="button style1">
-                      More
+                    <p>{btnP2}</p>
+                    <a
+                      href="https://www.google.com/search?ei=BJJNX4jsOYLSmAXWzJawDg&q=study+wizards+tutoring+california+google+reviews&oq=study+wizards+tutoring+california+google+reviews&gs_lcp=CgZwc3ktYWIQA1DIMljQR2CsSWgDcAB4AIABWYgBlQeSAQIxMpgBAKABAaoBB2d3cy13aXrAAQE&sclient=psy-ab&ved=0ahUKEwiI_s-K1sbrAhUCKaYKHVamBeYQ4dUDCA0&uact=5#lrd=0x808e3497e52fe473:0xddcb817cb831628,1,,,"
+                      className="button style1"
+                      target="_blank"
+                      style={{ background: '#60479c' }}
+                    >
+                      Read More
                     </a>
                   </section>
                 </div>

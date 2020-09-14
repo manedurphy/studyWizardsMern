@@ -8,6 +8,7 @@ import mathCalculator from '../assets/studyWizards/math-calculator.jpg';
 import NewFooter from '../components/Footer/NewFooter';
 import { Link } from 'react-router-dom';
 import NewNavbar from '../components/Navbar/NewNavbar';
+import NavSidebar from '../components/Navbar/NavSidebar';
 
 const NewHome = () => {
   const intro = {
@@ -46,6 +47,7 @@ const NewHome = () => {
 
   return (
     <>
+      <NavSidebar />
       <NewNavbar info={navInfo} />
       {/* Intro */}
       <Intro info={intro} />

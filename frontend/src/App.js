@@ -14,6 +14,9 @@ import NewHome from './pages/NewHome';
 import NewCourses from './pages/NewCourses';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Calendar from './pages/Calendar';
+import UserPrivateRoute from './components/routing/UserPrivateRoute';
+import YelpReviews from './pages/YelpReviews';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -38,9 +41,11 @@ function App() {
       <Route exact path="/contact-us" component={Contact} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/login" component={Login} />
+      <Route exact path="/reviews" component={YelpReviews} />
       <PrivateRoute exact path="/profile" component={Profile} />
       <PrivateRoute exact path="/create-profile" component={CreateProfile} />
       <PrivateRoute exact path="/edit-profile" component={EditProfile} />
+      <UserPrivateRoute exact path="/appointment" component={Calendar} />
     </div>
   );
 }

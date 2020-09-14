@@ -2,11 +2,11 @@ import React, { Children } from 'react';
 
 const NoSidebar = (props) => {
   return (
-    <div id="main" class="wrapper style2">
-      <div class="title">{props.heading}</div>
-      <div class="container">
+    <div id="main" className="wrapper style2">
+      <div className="title">{props.heading}</div>
+      <div className="container">
         <div id="content">
-          <article class="box post">{props.children}</article>
+          <article className="box post">{props.children}</article>
         </div>
       </div>
     </div>

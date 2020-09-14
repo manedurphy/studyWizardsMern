@@ -1581,21 +1581,21 @@ ul.actions {
   //   }
   // }
 
-  // body {
-  //   &.navPanel-visible {
-  //     #page-wrapper {
-  //       @include vendor('transform', 'translateX(#{_size(navPanel)})');
-  //     }
+  body {
+    &.navPanel-visible {
+      #page-wrapper {
+        @include vendor('transform', 'translateX(#{_size(navPanel)})');
+      }
 
-  //     #titleBar {
-  //       @include vendor('transform', 'translateX(#{_size(navPanel)})');
-  //     }
+      #titleBar {
+        @include vendor('transform', 'translateX(#{_size(navPanel)})');
+      }
 
-  //     #navPanel {
-  //       @include vendor('transform', 'translateX(0)');
-  //     }
-  //   }
-  // }
+      #navPanel {
+        @include vendor('transform', 'translateX(0)');
+      }
+    }
+  }
 }
 
 /* Small */
