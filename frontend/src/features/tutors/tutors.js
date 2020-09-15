@@ -25,6 +25,7 @@ const { successTutors, failTutors, clearTutors } = tutorsSlice.actions;
 
 export const getTutors = (category, subjects) => async (dispatch) => {
   try {
+    dispatch(clearTutors());
     const res = await axios.get('/api/profile');
     const filteredTutors = [];
 
@@ -42,7 +43,6 @@ export const getTutors = (category, subjects) => async (dispatch) => {
 
     res.data.forEach((item) => tutorTeachesCategory(item));
 
-    dispatch(clearTutors());
     dispatch(successTutors(filteredTutors));
   } catch (error) {
     console.error(error.message);

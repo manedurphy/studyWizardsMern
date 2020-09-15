@@ -1,22 +1,23 @@
-import React from 'react';
-import Hero from '../components/Hero/Hero';
-import banner from '../data/bannerData/Banner';
-import courses from '../data/coursesData/Courses';
-import Footer from '../components/Footer/Footer';
+// import React from 'react';
+// import Hero from '../components/Hero/Hero';
+// import banner from '../data/bannerData/Banner';
+// import courses from '../data/coursesData/Courses';
+// import Footer from '../components/Footer/Footer';
 
-const Courses = () => {
-  const { heading, desc, btn1, btn2 } = banner.courses;
-  return (
-    <>
-      <Hero
-        heading={heading}
-        desc={desc}
-        btn1={btn1}
-        btn2={btn2}
-        id="intro2"
-        courses={courses}
-      />
-      {/* <footer className="bg-dark">
+// const Courses = () => {
+//   const { heading, desc, btn1, btn2 } = banner.courses;
+//   return (
+//     <>
+//       <Hero
+//         heading={heading}
+//         desc={desc}
+//         btn1={btn1}
+//         btn2={btn2}
+//         id="intro2"
+//         courses={courses}
+//       />
+{
+  /* <footer className="bg-dark">
         <h1 className="text-center text-light">courses</h1>
         <div className="spacer bg-light mb-5"></div>
         <div className="container text-center ">
@@ -33,14 +34,15 @@ const Courses = () => {
             })}
           </div>
         </div>
-      </footer> */}
-      <footer className="container-fluid bg-dark text-white text-center ">
-        <h2 className="text-capitalize">our services</h2>
-        <div className="spacer bg-light mb-5"></div>
-        <Footer />
-      </footer>
-    </>
-  );
-};
+      </footer> */
+}
+//       <footer className="container-fluid bg-dark text-white text-center ">
+//         <h2 className="text-capitalize">our services</h2>
+//         <div className="spacer bg-light mb-5"></div>
+//         <Footer />
+//       </footer>
+//     </>
+//   );
+// };
 
-export default Courses;
+// export default Courses;

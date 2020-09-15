@@ -17,11 +17,10 @@ const NewFooter = (props) => {
             <header className="style1">
               <h2>Ready to Schedule a Consultation?</h2>
               <p>
-                Sed turpis tortor, tincidunt sed ornare in metus porttitor
-                mollis nunc in aliquet.
-                <br />
-                Nam pharetra laoreet imperdiet volutpat etiam feugiat.
+                Send us an email, or schedule an appointment on our Google
+                Calendar
               </p>
+              <br />
               <br />
               {props.btn && <div>{props.btn}</div>}
             </header>
@@ -102,6 +101,7 @@ const NewFooter = (props) => {
                           <a
                             href="https://www.yelp.com/biz/study-wizards-tutoring-san-jose-2?utm_medium=badge_star_rating_reviews&utm_source=biz_review_badge"
                             target="_blank"
+                            rel="noopener noreferrer"
                           >
                             yelp
                           </a>
@@ -109,6 +109,7 @@ const NewFooter = (props) => {
                           <a
                             href="https://www.google.com/search?ei=BJJNX4jsOYLSmAXWzJawDg&q=study+wizards+tutoring+california+google+reviews&oq=study+wizards+tutoring+california+google+reviews&gs_lcp=CgZwc3ktYWIQA1DIMljQR2CsSWgDcAB4AIABWYgBlQeSAQIxMpgBAKABAaoBB2d3cy13aXrAAQE&sclient=psy-ab&ved=0ahUKEwiI_s-K1sbrAhUCKaYKHVamBeYQ4dUDCA0&uact=5#lrd=0x808e3497e52fe473:0xddcb817cb831628,1,,,"
                             target="_blank"
+                            rel="noopener noreferrer"
                           >
                             google reviews
                           </a>
@@ -116,6 +117,7 @@ const NewFooter = (props) => {
                           <a
                             href="https://www.facebook.com/StudyWizards"
                             target="_blank"
+                            rel="noopener noreferrer"
                           >
                             facebook.com/StudyWizards
                           </a>
@@ -126,7 +128,7 @@ const NewFooter = (props) => {
                       <section>
                         <h3 className="icon solid fa-envelope">Email</h3>
                         <p>
-                          <a href="#">danem7@gmail.com</a>
+                          <a href="https://www.gmail.com">danem7@gmail.com</a>
                         </p>
                       </section>
                     </div>

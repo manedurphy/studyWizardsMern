@@ -1,26 +1,39 @@
 .nav-sidebar {
   background: #231f20;
-  display: flex;
-  justify-content: center;
   height: 100%;
-  width: 275px;
+  width: 100%;
   position: fixed;
-  left: 0;
+  left: -100%;
   top: 0;
   z-index: 1500;
+  transition: all 0.5s ease;
   display: none;
 
   ul {
     list-style: none;
     margin: 40px;
-    width: 275px;
+    width: 100%;
     li {
       padding: 25px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &:hover {
+        background: lighten(#231f20, 10%);
+        opacity: 0.8;
+        cursor: pointer;
+      }
       a {
+        font-size: 1.5rem;
         text-decoration: none;
       }
     }
   }
+}
+
+.nav-sidebar.active {
+  left: 0;
 }
 
 .burger {
@@ -34,6 +47,7 @@
   border-radius: 0.3rem;
   padding: 0.3rem;
   display: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 980px) {
@@ -44,4 +58,35 @@
   .burger {
     display: block;
   }
+}
+
+@media screen and (max-width: 790px) {
+  .nav-logo {
+    width: 15rem;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .nav-logo {
+    width: 12rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .nav-logo {
+    width: 10rem;
+  }
+}
+
+.links-container {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-logo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1600;
+  // display: none;
 }

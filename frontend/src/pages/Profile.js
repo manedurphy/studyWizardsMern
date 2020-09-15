@@ -27,7 +27,7 @@ const Profile = () => {
             {profile && (
               <>
                 <div className="col-4">
-                  <img src={profile.img} className=" profile-img" />
+                  <img src={profile.img} alt="tutor" className=" profile-img" />
                 </div>
                 <div className="col-8">
                   <h1 style={{ fontSize: '20px', marginBottom: '15px' }}>

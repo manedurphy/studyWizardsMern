@@ -1928,6 +1928,21 @@ small {
   padding: 1rem;
 }
 
+.blog-img {
+  width: 150px;
+}
+
+@media screen and (max-width: 980px) {
+  .blog-img {
+    display: none;
+  }
+}
+
+.blog-small {
+  margin: 0;
+  font-style: italic;
+}
+
 .loader,
 .loader:before,
 .loader:after {

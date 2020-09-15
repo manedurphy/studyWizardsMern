@@ -1,9 +1,23 @@
-import Home from './Home';
 import About from './About';
-import Error from './Error';
+import Blog from './Blog';
+import Calendar from './Calendar';
 import Contact from './Contact';
-import Courses from './Courses';
 import Course from './Course';
-import Form from './Form';
+import Error from './Error';
+import NewCourses from './NewCourses';
+import NewHome from './NewHome';
+import Profile from './Profile';
+import YelpReviews from './YelpReviews';
 
-export { Home, About, Error, Contact, Courses, Course, Form };
+export {
+  About,
+  Error,
+  Contact,
+  Course,
+  Calendar,
+  Blog,
+  NewCourses,
+  NewHome,
+  Profile,
+  YelpReviews,
+};

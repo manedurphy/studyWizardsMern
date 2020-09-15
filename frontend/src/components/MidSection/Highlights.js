@@ -60,13 +60,13 @@ const Highlights = ({ info, paths }) => {
                 <p>{desc2}</p>
                 <ul className="actions">
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to={path2}
                       className="button style1"
                       style={{ background: '#60479c' }}
                     >
                       Learn More
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </section>

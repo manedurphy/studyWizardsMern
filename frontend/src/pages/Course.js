@@ -2,10 +2,12 @@ import React, { useEffect } from 'react';
 import { FaLaptop, FaUserAlt, FaBookReader } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTutors } from '../features/tutors/tutors';
+import { courseInfo } from '../data/Course/Course';
 import Spinner from '../components/Spinner/Spinner';
 import NewNavbar from '../components/Navbar/NewNavbar';
 import NoSidebar from '../components/MidSection/NoSidebar';
 import NewFooter from '../components/Footer/NewFooter';
+import NavSidebar from '../components/Navbar/NavSidebar';
 
 const Course = ({ match }) => {
   const dispatch = useDispatch();
@@ -20,27 +22,15 @@ const Course = ({ match }) => {
         : 'Affordable Private Reading & Writing Tutoring in San Jose and Silicon Valley',
   };
 
-  const courseInfo = {
-    mathematics: [
-      'Calculus',
-      'Algebra',
-      'Trigonometry',
-      'Geometry',
-      'Common Core',
-      '',
-    ],
-    language: ['Reading', 'Writing', 'English', 'Spanish', ''],
-    science: ['Biology', 'Chemistry', 'Physics'],
-  };
-
   useEffect(() => {
     dispatch(getTutors(match.params.id, courseInfo[match.params.id]));
-  }, [dispatch]);
+  }, []);
 
   return loading ? (
     <Spinner />
   ) : (
     <>
+      <NavSidebar />
       <NewNavbar info={info} />
       <NoSidebar heading={`Meet Our ${match.params.id} Tutors`}>
         <div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import './Dropdown.css';
 
 const Dropdown = () => {
   const items = [
