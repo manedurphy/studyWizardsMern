@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { blogLinks } from '../../data/Blog/Blog';
 
-//small change
-const LeftSidebar = ({ info, blog }) => {
+const AboutSidebar = ({ info }) => {
   const {
+    tag,
     img1,
     img2,
     img3,
-    // heading1,
+    heading1,
     heading2,
     heading3,
     heading4,
@@ -18,6 +18,8 @@ const LeftSidebar = ({ info, blog }) => {
     btnP2,
     btnLink1,
     btnLink2,
+    isLink,
+    isBlog,
     icon1,
     icon2,
     p1,
@@ -36,7 +38,7 @@ const LeftSidebar = ({ info, blog }) => {
 
   return (
     <section id="main" className="wrapper style2">
-      <div className="title">Blog</div>
+      <div className="title">{tag}</div>
       <div className="container">
         <div className="row gtr-150">
           <div className="col-4 col-12-medium">
@@ -67,12 +69,24 @@ const LeftSidebar = ({ info, blog }) => {
                 <ul className="style2">
                   <li>
                     <article className="box post-excerpt">
-                      <Link to="/blog/study-ap-exams/">
+                      {isBlog ? (
+                        <Link to="/blog/study-ap-exams/">
+                          <img
+                            src={img1}
+                            alt="leftImg"
+                            className="image left"
+                          />
+                        </Link>
+                      ) : (
                         <img src={img1} alt="leftImg" className="image left" />
-                      </Link>
-                      <Link to={'/blog/study-ap-exams/'}>
+                      )}
+                      {isBlog ? (
+                        <Link to={'/blog/study-ap-exams/'}>
+                          <h3>{leftSubheading1}</h3>
+                        </Link>
+                      ) : (
                         <h3>{leftSubheading1}</h3>
-                      </Link>
+                      )}
                       <p>
                         Duis odio diam, luctus et vulputate vitae, vehicula ac
                         dolor. Pellentesque at urna eget tellus sed etiam.
@@ -81,12 +95,24 @@ const LeftSidebar = ({ info, blog }) => {
                   </li>
                   <li>
                     <article className="box post-excerpt">
-                      <Link to="/blog/how-to-help-your-adhd-child-in-school">
+                      {isBlog ? (
+                        <Link to="/blog/how-to-help-your-adhd-child-in-school">
+                          <img
+                            src={img2}
+                            alt="leftImg"
+                            className="image left"
+                          />
+                        </Link>
+                      ) : (
                         <img src={img2} alt="leftImg" className="image left" />
-                      </Link>
-                      <Link to={'/blog/study-ap-exams/'}>
+                      )}
+                      {isBlog ? (
+                        <Link to={'/blog/study-ap-exams/'}>
+                          <h3>{leftSubheading2}</h3>
+                        </Link>
+                      ) : (
                         <h3>{leftSubheading2}</h3>
-                      </Link>
+                      )}
                       <p>
                         Duis odio diam, luctus et vulputate vitae, vehicula ac
                         dolor. Pellentesque at urna eget tellus sed etiam.
@@ -95,12 +121,24 @@ const LeftSidebar = ({ info, blog }) => {
                   </li>
                   <li>
                     <article className="box post-excerpt">
-                      <Link to="/blog/how-to-help-your-adhd-child-in-school">
+                      {isBlog ? (
+                        <Link to="/blog/how-to-help-your-adhd-child-in-school">
+                          <img
+                            src={img3}
+                            alt="leftImg"
+                            className="image left"
+                          />
+                        </Link>
+                      ) : (
                         <img src={img3} alt="leftImg" className="image left" />
-                      </Link>
-                      <Link to={'/blog/study-ap-exams/'}>
+                      )}
+                      {isBlog ? (
+                        <Link to={'/blog/study-ap-exams/'}>
+                          <h3>{leftSubheading3}</h3>
+                        </Link>
+                      ) : (
                         <h3>{leftSubheading3}</h3>
-                      </Link>
+                      )}
                       <p>
                         Duis odio diam, luctus et vulputate vitae, vehicula ac
                         dolor. Pellentesque at urna eget tellus sed etiam.
@@ -137,20 +175,20 @@ const LeftSidebar = ({ info, blog }) => {
             <div id="content">
               <article className="box post">
                 <header className="style1">
-                  <h2>{blog.title}</h2>
-                  <p className="italic">{blog.date}</p>
+                  <h2>{mainHeading}</h2>
+                  <p className={isBlog && 'italic'}>{mainSubheading}</p>
                 </header>
                 <a href="#" className="image featured">
                   <img src="images/pic01.jpg" alt="" />
                 </a>
-                {blog.headings.map((heading, index) => {
-                  return (
-                    <div key={index}>
-                      <h2>{heading}</h2>
-                      <p>{blog.paragraphs[index]}</p>
-                    </div>
-                  );
-                })}
+                <h2>{heading1}</h2>
+                <p>{p1}</p>
+                <h2>{heading2}</h2>
+                <p>{p2}</p>
+                <h2>{heading3}</h2>
+                <p>{p3}</p>
+                <h2>{heading4}</h2>
+                <p>{p4}</p>
               </article>
               <div className="row gtr-150">
                 <div className="col-6 col-12-small">
@@ -165,13 +203,25 @@ const LeftSidebar = ({ info, blog }) => {
                       <img src="images/pic05.jpg" alt="" />
                     </a>
                     <p>{btnP1}</p>
-                    <Link
-                      to={btnLink1}
-                      className="button style1"
-                      style={{ background: '#60479c' }}
-                    >
-                      Read More
-                    </Link>
+                    {isLink ? (
+                      <Link
+                        to={btnLink1}
+                        className="button style1"
+                        style={{ background: '#60479c' }}
+                      >
+                        Read More
+                      </Link>
+                    ) : (
+                      <a
+                        href="https://www.yelp.com/biz/study-wizards-tutoring-san-jose-2?utm_medium=badge_star_rating_reviews&utm_source=biz_review_badge"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="button style1"
+                        style={{ background: '#60479c' }}
+                      >
+                        Read More
+                      </a>
+                    )}
                   </section>
                 </div>
                 <div className="col-6 col-12-small">
@@ -191,13 +241,25 @@ const LeftSidebar = ({ info, blog }) => {
                       <img src="images/pic06.jpg" alt="" />
                     </a>
                     <p>{btnP2}</p>
-                    <Link
-                      to={btnLink2}
-                      className="button style1"
-                      style={{ background: '#60479c' }}
-                    >
-                      Read More
-                    </Link>
+                    {isLink ? (
+                      <Link
+                        to={btnLink2}
+                        className="button style1"
+                        style={{ background: '#60479c' }}
+                      >
+                        Read More
+                      </Link>
+                    ) : (
+                      <a
+                        href="https://www.google.com/search?ei=BJJNX4jsOYLSmAXWzJawDg&q=study+wizards+tutoring+california+google+reviews&oq=study+wizards+tutoring+california+google+reviews&gs_lcp=CgZwc3ktYWIQA1DIMljQR2CsSWgDcAB4AIABWYgBlQeSAQIxMpgBAKABAaoBB2d3cy13aXrAAQE&sclient=psy-ab&ved=0ahUKEwiI_s-K1sbrAhUCKaYKHVamBeYQ4dUDCA0&uact=5#lrd=0x808e3497e52fe473:0xddcb817cb831628,1,,,"
+                        className="button style1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ background: '#60479c' }}
+                      >
+                        Read More
+                      </a>
+                    )}
                   </section>
                 </div>
               </div>
@@ -209,4 +271,4 @@ const LeftSidebar = ({ info, blog }) => {
   );
 };
 
-export default LeftSidebar;
+export default AboutSidebar;

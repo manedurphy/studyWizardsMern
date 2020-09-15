@@ -31,6 +31,10 @@ const ProfileSchema = new Schema({
       type: Boolean,
       require: true,
     },
+    honors: {
+      type: Boolean,
+      required: true,
+    },
   },
 });
 

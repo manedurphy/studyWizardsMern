@@ -26,3 +26,7 @@ Content-Type: application/json
 ###
 GET http://localhost:5000/api/profile/me
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0dXRvciI6eyJpZCI6IjVmNTBhNzg0ZDA1NjFlMmMzODA2ZTNkMCJ9LCJpYXQiOjE1OTk2Mjc4NDh9.8J2JBqsXggg8XGow442NtS5YB74AxTgTRs9xTN6nfIc
+
+
+###
+POST http://localhost:5000/api/blog/

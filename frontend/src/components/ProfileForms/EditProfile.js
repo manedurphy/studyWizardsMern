@@ -23,6 +23,7 @@ const EditProfile = ({ history }) => {
 
   useEffect(() => {
     dispatch(getCurrentProfile());
+    console.log(formData.person);
   }, [dispatch]);
 
   const changeHandler = (e) => {
@@ -30,7 +31,7 @@ const EditProfile = ({ history }) => {
   };
 
   const checkboxHandler = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.checked });
+    setFormData({ ...formData, [e.target.name]: !formData[e.target.name] });
   };
 
   const onSubmitHandler = (e) => {

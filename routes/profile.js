@@ -77,7 +77,7 @@ router.post(
         bio,
         services: {
           online,
-          person,
+          inPerson: person,
           honors,
         },
         img: imageUrl,
@@ -137,7 +137,7 @@ router.put(
         bio,
         services: {
           online,
-          person,
+          inPerson: person,
           honors,
         },
         img: imageUrl,

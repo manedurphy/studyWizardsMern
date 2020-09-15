@@ -2,36 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { blogLinks } from '../../data/Blog/Blog';
 
-//small change
-const LeftSidebar = ({ info, blog }) => {
+const BlogSidebar = ({ info, blog }) => {
   const {
     img1,
     img2,
     img3,
-    // heading1,
-    heading2,
-    heading3,
-    heading4,
     btnHeadingLeft,
     btnHeadingRight,
     btnP1,
     btnP2,
     btnLink1,
     btnLink2,
-    icon1,
-    icon2,
-    p1,
-    p2,
-    p3,
-    p4,
     leftHeading1,
     leftHeading2,
     leftHeading3,
     leftSubheading1,
     leftSubheading2,
     leftSubheading3,
-    mainHeading,
-    mainSubheading,
   } = info;
 
   return (
@@ -156,10 +143,7 @@ const LeftSidebar = ({ info, blog }) => {
                 <div className="col-6 col-12-small">
                   <section className="box">
                     <header>
-                      <h2>
-                        {btnHeadingLeft}
-                        {icon1}
-                      </h2>
+                      <h2>{btnHeadingLeft}</h2>
                     </header>
                     <a href="#" className="image featured">
                       <img src="images/pic05.jpg" alt="" />
@@ -177,10 +161,7 @@ const LeftSidebar = ({ info, blog }) => {
                 <div className="col-6 col-12-small">
                   <section className="box">
                     <header>
-                      <h2>
-                        {btnHeadingRight}
-                        {icon2}
-                      </h2>
+                      <h2>{btnHeadingRight}</h2>
                     </header>
                     <a
                       href="#"
@@ -209,4 +190,4 @@ const LeftSidebar = ({ info, blog }) => {
   );
 };
 
-export default LeftSidebar;
+export default BlogSidebar;

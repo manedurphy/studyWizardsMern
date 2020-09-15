@@ -3,6 +3,7 @@ const express = require('express');
 const tutorsRoute = require('./routes/tutors');
 const authRoute = require('./routes/auth');
 const profileRoute = require('./routes/profile');
+const blogRoute = require('./routes/blog');
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use('/api/tutors', tutorsRoute);
 app.use('/api/auth', authRoute);
 app.use('/api/profile', profileRoute);
+app.use('/api/blog', blogRoute);
 
 app.get('/', (req, res) => res.send('working'));
 

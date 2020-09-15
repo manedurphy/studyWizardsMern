@@ -1,6 +1,6 @@
 import React from 'react';
 import NewFooter from '../components/Footer/NewFooter';
-import LeftSidebar from '../components/MidSection/LeftSidebar';
+import AboutSidebar from '../components/MidSection/AboutSidebar';
 import NewNavbar from '../components/Navbar/NewNavbar';
 import NavSidebar from '../components/Navbar/NavSidebar';
 import { sidebar, navInfo } from '../data/About/About';
@@ -10,7 +10,7 @@ const About = () => {
     <>
       <NavSidebar />
       <NewNavbar info={navInfo} />
-      <LeftSidebar info={sidebar} />
+      <AboutSidebar info={sidebar} />
       <NewFooter />
     </>
   );
