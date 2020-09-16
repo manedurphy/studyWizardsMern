@@ -120,15 +120,6 @@ const LeftSidebar = ({ info, blog }) => {
                 <header>
                   <h2>{leftHeading3}</h2>
                 </header>
-                <ul className="style3">
-                  {blogLinks.map((blog, index) => {
-                    return (
-                      <li key={index}>
-                        <Link to={blog.link}>{blog.title}</Link>
-                      </li>
-                    );
-                  })}
-                </ul>
               </section>
             </div>
           </div>
@@ -136,21 +127,10 @@ const LeftSidebar = ({ info, blog }) => {
             {/* Content */}
             <div id="content">
               <article className="box post">
-                <header className="style1">
-                  <h2>{blog.title}</h2>
-                  <p className="italic">{blog.date}</p>
-                </header>
+                <header className="style1"></header>
                 <a href="#" className="image featured">
                   <img src="images/pic01.jpg" alt="" />
                 </a>
-                {blog.headings.map((heading, index) => {
-                  return (
-                    <div key={index}>
-                      <h2>{heading}</h2>
-                      <p>{blog.paragraphs[index]}</p>
-                    </div>
-                  );
-                })}
               </article>
               <div className="row gtr-150">
                 <div className="col-6 col-12-small">

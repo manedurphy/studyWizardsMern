@@ -5,7 +5,7 @@ import { Redirect, Link } from 'react-router-dom';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const { isAuthenticated, errors } = useSelector((state) => state.auth);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -24,6 +24,12 @@ const Login = () => {
   return (
     <>
       <section className="container login">
+        {errors.length > 0 &&
+          errors.map((err) => (
+            <div className="user-message-error" key={err.id}>
+              {err.msg}
+            </div>
+          ))}
         <h1>Log In</h1>
         <form onSubmit={submitHandler}>
           <div className="form-group">

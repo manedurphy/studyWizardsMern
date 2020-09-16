@@ -13,8 +13,6 @@ const BlogPost = ({ match }) => {
   const dispatch = useDispatch();
   const blog = blogs.find((item) => item.path === match.params.id);
 
-  // setTimeout(() => console.log(blog), 3000);
-
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(getBlogPosts());

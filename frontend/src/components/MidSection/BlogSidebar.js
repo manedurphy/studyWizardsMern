@@ -71,7 +71,7 @@ const BlogSidebar = ({ info, blog }) => {
                       <Link to="/blog/how-to-help-your-adhd-child-in-school">
                         <img src={img2} alt="leftImg" className="image left" />
                       </Link>
-                      <Link to={'/blog/study-ap-exams/'}>
+                      <Link to={'/blog/how-to-help-your-adhd-child-in-school'}>
                         <h3>{leftSubheading2}</h3>
                       </Link>
                       <p>
@@ -82,10 +82,14 @@ const BlogSidebar = ({ info, blog }) => {
                   </li>
                   <li>
                     <article className="box post-excerpt">
-                      <Link to="/blog/how-to-help-your-adhd-child-in-school">
+                      <Link to="/blog/regular-family-dinner-improve-childs-grades-and-health">
                         <img src={img3} alt="leftImg" className="image left" />
                       </Link>
-                      <Link to={'/blog/study-ap-exams/'}>
+                      <Link
+                        to={
+                          '/blog/regular-family-dinner-improve-childs-grades-and-health'
+                        }
+                      >
                         <h3>{leftSubheading3}</h3>
                       </Link>
                       <p>
@@ -124,20 +128,21 @@ const BlogSidebar = ({ info, blog }) => {
             <div id="content">
               <article className="box post">
                 <header className="style1">
-                  <h2>{blog.title}</h2>
-                  <p className="italic">{blog.date}</p>
+                  <h2>{blog && blog.title}</h2>
+                  <p className="italic">{blog && blog.date}</p>
                 </header>
                 <a href="#" className="image featured">
                   <img src="images/pic01.jpg" alt="" />
                 </a>
-                {blog.headings.map((heading, index) => {
-                  return (
-                    <div key={index}>
-                      <h2>{heading}</h2>
-                      <p>{blog.paragraphs[index]}</p>
-                    </div>
-                  );
-                })}
+                {blog &&
+                  blog.headings.map((heading, index) => {
+                    return (
+                      <div key={index}>
+                        <h2>{heading}</h2>
+                        <p>{blog.paragraphs[index]}</p>
+                      </div>
+                    );
+                  })}
               </article>
               <div className="row gtr-150">
                 <div className="col-6 col-12-small">

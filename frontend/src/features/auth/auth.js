@@ -83,7 +83,22 @@ export const login = (email, password) => async (dispatch) => {
     dispatch(success(res.data.token));
     dispatch(getCurrentProfile());
   } catch (error) {
-    console.error(error.message);
+    const errors = error.response.data.errors;
+
+    if (errors) {
+      errors.forEach((err) => {
+        const id = uuid();
+        dispatch(
+          addError({
+            msg: err.msg,
+            id,
+          })
+        );
+        setTimeout(() => {
+          dispatch(removeError(id));
+        }, 4000);
+      });
+    }
   }
 };
 

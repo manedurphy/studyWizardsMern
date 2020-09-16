@@ -29,4 +29,4 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0dXRvciI6eyJpZCI6I
 
 
 ###
-POST http://localhost:5000/api/blog/
+GET http://localhost:5000/api/blog/

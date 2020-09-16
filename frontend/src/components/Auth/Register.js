@@ -30,10 +30,10 @@ const Register = ({ history }) => {
       <div className="container register">
         <h1 className="text-center ">Tutor Registration</h1>
         {errors.length > 0 &&
-          errors.map((item, index) => {
+          errors.map((err, index) => {
             return (
               <div className="user-message-error" key={index}>
-                {item.msg}
+                {err.msg}
               </div>
             );
           })}

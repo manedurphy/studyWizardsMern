@@ -115,7 +115,7 @@ export const blogPostPageElements = {
   tag: 'Blog',
   // heading1: 'Heading',
   leftHeading1: 'Read Our Blog',
-  leftHeading2: 'More Blog Posts',
+  leftHeading2: 'Most Recent Posts',
   leftHeading3: 'Our Articles',
   leftSubheading1: 'AP Exams',
   leftSubheading2: 'Help your Child with ADHD',

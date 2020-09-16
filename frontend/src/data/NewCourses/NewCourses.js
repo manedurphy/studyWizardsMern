@@ -13,9 +13,9 @@ export const info = {
 };
 
 export const paths = {
-  path1: 'courses/mathematics',
-  path2: 'courses/language',
-  path3: 'courses/science',
+  path1: '/courses/mathematics',
+  path2: '/courses/language',
+  path3: '/courses/science',
 };
 
 export const navInfo = {

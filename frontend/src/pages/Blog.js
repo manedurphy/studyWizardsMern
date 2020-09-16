@@ -20,9 +20,9 @@ const Blog = () => {
         <section id="main" className="wrapper style2">
           <div className="container">
             <div className="row">
-              {blogLinks.map((blog) => {
+              {blogLinks.map((blog, index) => {
                 return (
-                  <>
+                  <div key={index}>
                     <div>
                       <Link to={blog.link}>
                         <img src={blog.img} alt="blog" className="blog-img" />
@@ -35,7 +35,7 @@ const Blog = () => {
                       <small className="blog-small">Posted: {blog.date}</small>
                       <p>{blog.prev}</p>
                     </div>
-                  </>
+                  </div>
                 );
               })}
             </div>
