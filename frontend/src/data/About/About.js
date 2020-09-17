@@ -38,14 +38,20 @@ export const aboutPageElements = {
         {
           img: michaelImg,
           heading: 'Meet Michael',
+          p:
+            'Duis odio diam, luctus et vulputate vitae, vehicula ac dolor. Pellentesque at urna eget tellus sed etiam.',
         },
         {
           img: kahanImg,
           heading: 'Meet Tom',
+          p:
+            'Duis odio diam, luctus et vulputate vitae, vehicula ac dolor. Pellentesque at urna eget tellus sed etiam.',
         },
         {
           img: resenburgImg,
           heading: 'Meet Sheila',
+          p:
+            'Duis odio diam, luctus et vulputate vitae, vehicula ac dolor. Pellentesque at urna eget tellus sed etiam.',
         },
       ],
     },

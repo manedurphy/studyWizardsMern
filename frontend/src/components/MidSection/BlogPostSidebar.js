@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const AboutSidebar = ({ info }) => {
-  const { tag, mainHeading, mainSubheading, body, images, btns, left } = info;
+const BlogSidebar = ({ blog, info }) => {
+  const { left, btns, tag } = info;
 
   return (
     <section id="main" className="wrapper style2">
@@ -36,12 +36,16 @@ const AboutSidebar = ({ info }) => {
                             return (
                               <li key={index}>
                                 <article className="box post-excerpt">
-                                  <img
-                                    src={image.img}
-                                    alt="leftImg"
-                                    className="image left"
-                                  />
-                                  <h3>{image.heading}</h3>
+                                  <Link to={image.link}>
+                                    <img
+                                      src={image.img}
+                                      alt="leftImg"
+                                      className="image left"
+                                    />
+                                  </Link>
+                                  <Link to={image.link}>
+                                    <h3>{image.heading}</h3>
+                                  </Link>
                                   <p>{image.p}</p>
                                 </article>
                               </li>
@@ -77,20 +81,21 @@ const AboutSidebar = ({ info }) => {
             <div id="content">
               <article className="box post">
                 <header className="style1">
-                  <h2>{mainHeading}</h2>
-                  <p>{mainSubheading}</p>
+                  <h2>{blog && blog.title}</h2>
+                  <p className="italic">{blog && blog.date}</p>
                 </header>
                 <a href="#" className="image featured">
                   <img src="images/pic01.jpg" alt="" />
                 </a>
-                {body.map((bodyEl, index) => {
-                  return (
-                    <div key={index}>
-                      <h2>{bodyEl.heading}</h2>
-                      <p>{bodyEl.p}</p>
-                    </div>
-                  );
-                })}
+                {blog &&
+                  blog.headings.map((heading, index) => {
+                    return (
+                      <div key={index}>
+                        <h2>{heading}</h2>
+                        <p>{blog.paragraphs[index]}</p>
+                      </div>
+                    );
+                  })}
               </article>
               <div className="row gtr-150">
                 {btns.map((btn, index) => {
@@ -121,4 +126,4 @@ const AboutSidebar = ({ info }) => {
   );
 };
 
-export default AboutSidebar;
+export default BlogSidebar;

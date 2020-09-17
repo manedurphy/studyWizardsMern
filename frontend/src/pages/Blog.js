@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NoSidebar from '../components/MidSection/NoSidebar';
 import NewFooter from '../components/Footer/NewFooter';
 import { Link } from 'react-router-dom';
 import { blogLinks } from '../data/Blog/Blog';
 
 const Blog = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <NoSidebar heading="Study Wizards Blog">

@@ -10,11 +10,6 @@ import BadMathImg from '../../assets/studyWizards/Blog/BadMath.jpg';
 import CurvyPizzaImg from '../../assets/studyWizards/Blog/CurvyPizza.png';
 import PowerTriangles from '../../assets/studyWizards/Blog/PowerTriangles.jpg';
 
-export const navInfo = {
-  heading: 'Study Wizards Private Tutoring',
-  subheading: 'Personalized For Success',
-};
-
 export const blogLinks = [
   {
     title: 'Best Ways to Prop for the SAT and ACT',
@@ -108,24 +103,93 @@ export const blogLinks = [
   },
 ];
 
+// export const blogPostPageElements = {
+//   img1: APImg,
+//   img2: ADHDImg,
+//   img3: FamilyDinnerImg,
+//   tag: 'Blog',
+//   // heading1: 'Heading',
+//   leftHeading1: 'Read Our Blog',
+//   leftHeading2: 'Most Recent Posts',
+//   leftHeading3: 'Our Articles',
+//   leftSubheading1: 'AP Exams',
+//   leftSubheading2: 'Help your Child with ADHD',
+//   leftSubheading3: 'Family Dinners',
+//   btnHeadingLeft: 'What Others Say About Us',
+//   btnHeadingRight: 'What Our Tutors Say About Us',
+//   btnP1: 'Read our most recent success stories from other parents in your area',
+//   btnP2: 'Read about why our tutors love about working for Study Wizards',
+//   btnLink1: '/reviews',
+//   btnLink2: '/tutor-reviews',
+//   isLink: true,
+//   isBlog: true,
+// };
+
 export const blogPostPageElements = {
-  img1: APImg,
-  img2: ADHDImg,
-  img3: FamilyDinnerImg,
   tag: 'Blog',
-  // heading1: 'Heading',
-  leftHeading1: 'Read Our Blog',
-  leftHeading2: 'Most Recent Posts',
-  leftHeading3: 'Our Articles',
-  leftSubheading1: 'AP Exams',
-  leftSubheading2: 'Help your Child with ADHD',
-  leftSubheading3: 'Family Dinners',
-  btnHeadingLeft: 'What Others Say About Us',
-  btnHeadingRight: 'What Our Tutors Say About Us',
-  btnP1: 'Read our most recent success stories from other parents in your area',
-  btnP2: 'Read about why our tutors love about working for Study Wizards',
-  btnLink1: '/reviews',
-  btnLink2: '/tutor-reviews',
-  isLink: true,
-  isBlog: true,
+  mainHeading: 'Get To Know Our Leadership Team',
+  mainSubheading:
+    'We Set High Standards for Ourselves to Help Your Child Reach Their Potential',
+  left: [
+    {
+      heading: 'Read Our Blog',
+      p:
+        'Read about the strategies we implement in order to push our students towards success. We cover the importance of developing great study skills as well as stress managemnet and emotional wellness.',
+      link: '/blog',
+    },
+    {
+      heading: 'Recent Posts',
+      images: [
+        {
+          img: prepImg,
+          heading: 'Preparing for SAT & ACT',
+          link: '/blog/best-ways-to-prepare-for-the-sat-and-act',
+          p:
+            'Duis odio diam, luctus et vulputate vitae, vehicula ac dolor. Pellentesque at urna eget tellus sed etiam.',
+        },
+        {
+          img: foreignImg,
+          heading: 'Tips for Learning New Language',
+          p:
+            'Duis odio diam, luctus et vulputate vitae, vehicula ac dolor. Pellentesque at urna eget tellus sed etiam.',
+          link: '/blog/tips-for-learning-foreign-language',
+        },
+        {
+          img: readingImg,
+          heading: 'Become a Better Reader',
+          p:
+            'Duis odio diam, luctus et vulputate vitae, vehicula ac dolor. Pellentesque at urna eget tellus sed etiam.',
+          link: '/blog/kids-old-young-become-better-readers',
+        },
+      ],
+    },
+    {
+      heading: 'Our Articles',
+      blog: blogLinks,
+    },
+  ],
+  btns: [
+    {
+      link: '/reviews',
+      heading: 'What Others Say About Us',
+      p: 'Read our most recent success stories from other parents in your area',
+    },
+    {
+      link: '/tutor-reviews',
+      heading: 'What Our Tutors Say About Us',
+      p: 'Read about why our tutors love about working for Study Wizards',
+    },
+  ],
+  btns: [
+    {
+      link: '/reviews',
+      heading: 'What Others Say About Us',
+      p: 'Read our most recent success stories from other parents in your area',
+    },
+    {
+      link: '/tutor-reviews',
+      heading: 'What Our Tutors Say About Us',
+      p: 'Read about why our tutors love about working for Study Wizards',
+    },
+  ],
 };

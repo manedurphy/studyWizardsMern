@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import BlogSidebar from '../MidSection/BlogSidebar';
-import { blogPostPageElements, navInfo } from '../../data/Blog/Blog';
-import NavSidebar from '../Navbar/NavSidebar';
-import NewNavbar from '../Navbar/NewNavbar';
+import BlogPostSidebar from '../MidSection/BlogPostSidebar';
+import { blogPostPageElements } from '../../data/Blog/Blog';
 import NewFooter from '../Footer/NewFooter';
 import { getBlogPosts } from '../../features/blogs/blogs';
 import Spinner from '../Spinner/Spinner';
@@ -23,9 +21,7 @@ const BlogPost = ({ match }) => {
         <Spinner />
       ) : (
         <>
-          <NavSidebar />
-          <NewNavbar info={navInfo} />
-          <BlogSidebar info={blogPostPageElements} blog={blog} />
+          <BlogPostSidebar info={blogPostPageElements} blog={blog} />
           <NewFooter />
         </>
       )}
