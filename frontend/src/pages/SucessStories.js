@@ -1,11 +1,7 @@
 import React, { useEffect } from 'react';
 import NewFooter from '../components/Footer/NewFooter';
 import SuccessStories from '../components/MidSection/SucessStories';
-import {
-  successPageInfo,
-  stories,
-} from '../components/../data/SuccessStories/SuccessStories';
-import { blogLinks, blogPostPageElements } from '../data/Blog/Blog';
+import { successPageInfo } from '../data/SuccessStories/SuccessStories';
 import { errorFalse } from '../features/auth/auth';
 import { useDispatch } from 'react-redux';
 
@@ -17,12 +13,7 @@ const SucessStories = () => {
   });
   return (
     <>
-      <SuccessStories
-        blogElements={blogPostPageElements}
-        blogLinks={blogLinks}
-        success={successPageInfo}
-        stories={stories}
-      />
+      <SuccessStories info={successPageInfo} />
       <NewFooter />
     </>
   );

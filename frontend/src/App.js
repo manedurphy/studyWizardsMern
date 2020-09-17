@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
-import { Route, Switch } from 'react-router-dom';
-import { authorized, errorFalse } from './features/auth/auth';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import { authorized } from './features/auth/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import setAuthToken from './components/util/setAuthToken';
 import CreateProfile from './components/ProfileForms/CreateProfile';
@@ -60,14 +60,14 @@ function App() {
           <Route exact path="/courses" component={NewCourses} />
           <Route exact path="/about" component={About} />
           <Route exact path="/courses/:id" component={Course} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
           <Route exact path="/reviews" component={YelpReviews} />
           <Route exact path="/blog" component={Blog} />
           <Route path="/blog/:id" component={BlogPost} />
           <Route exact path="/our-success-stories" component={SuccessStories} />
           <PrivateRoute exact path="/profile" component={Profile} />
-          <Error component={Error} />
+          <UserPrivateRoute exact path="/appointment" component={Calendar} />
+          <Route path="/404" component={Error} />
+          <Redirect to="/404" />
         </Switch>
       </>
     );
@@ -76,14 +76,14 @@ function App() {
   return (
     <div className="App" id="page-wrapper">
       <NavSidebar />
-      {/* <NewNavbar info={!isAuthenticated ? navInfo : loggedInNavInfo} /> */}
-      {/* <Switch> */}
-      <PrivateRoute exact path="/create-profile" component={CreateProfile} />
-      <PrivateRoute exact path="/edit-profile" component={EditProfile} />
-      <UserPrivateRoute exact path="/appointment" component={Calendar} />
-      <Route exact path="/contact-us" component={Contact} />
-      <Route component={withContainer} />
-      {/* </Switch> */}
+      <Switch>
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+        <PrivateRoute exact path="/create-profile" component={CreateProfile} />
+        <PrivateRoute exact path="/edit-profile" component={EditProfile} />
+        <Route exact path="/contact-us" component={Contact} />
+        <Route component={withContainer} />
+      </Switch>
     </div>
   );
 }

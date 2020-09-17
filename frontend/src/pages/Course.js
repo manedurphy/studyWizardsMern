@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import NewFooter from '../components/Footer/NewFooter';
 import NoSidebar from '../components/MidSection/NoSidebar';
 import Spinner from '../components/Spinner/Spinner';
@@ -6,18 +6,30 @@ import { FaLaptop, FaUserAlt, FaBookReader } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTutors } from '../features/tutors/tutors';
 import { errorFalse } from '../features/auth/auth';
+import { Redirect } from 'react-router-dom';
 
 const Course = ({ match }) => {
   const dispatch = useDispatch();
+  const [courses, setCourses] = useState([
+    'mathematics',
+    'language',
+    'science',
+  ]);
+  const [courseExists, setCourseExists] = useState(true);
   const { tutors, loading } = useSelector((state) => state.tutors);
 
   useEffect(() => {
+    if (courses.indexOf(match.params.id) === -1) {
+      setCourseExists(false);
+    }
     dispatch(errorFalse());
     dispatch(getTutors(match.params.id));
   }, []);
 
   return loading ? (
     <Spinner />
+  ) : !courseExists ? (
+    <Redirect to="/404/" />
   ) : (
     <>
       <NoSidebar heading={`Meet Our ${match.params.id} Tutors`}>

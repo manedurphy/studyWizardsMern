@@ -103,28 +103,6 @@ export const blogLinks = [
   },
 ];
 
-// export const blogPostPageElements = {
-//   img1: APImg,
-//   img2: ADHDImg,
-//   img3: FamilyDinnerImg,
-//   tag: 'Blog',
-//   // heading1: 'Heading',
-//   leftHeading1: 'Read Our Blog',
-//   leftHeading2: 'Most Recent Posts',
-//   leftHeading3: 'Our Articles',
-//   leftSubheading1: 'AP Exams',
-//   leftSubheading2: 'Help your Child with ADHD',
-//   leftSubheading3: 'Family Dinners',
-//   btnHeadingLeft: 'What Others Say About Us',
-//   btnHeadingRight: 'What Our Tutors Say About Us',
-//   btnP1: 'Read our most recent success stories from other parents in your area',
-//   btnP2: 'Read about why our tutors love about working for Study Wizards',
-//   btnLink1: '/reviews',
-//   btnLink2: '/tutor-reviews',
-//   isLink: true,
-//   isBlog: true,
-// };
-
 export const blogPostPageElements = {
   tag: 'Blog',
   mainHeading: 'Get To Know Our Leadership Team',
