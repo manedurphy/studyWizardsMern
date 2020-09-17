@@ -18,7 +18,23 @@ export const paths = {
   path3: '/courses/science',
 };
 
-export const navInfo = {
-  heading: 'Study Wizards Private Tutoring',
-  subheading: 'Personalized For Success',
+export const newCoursesPageElements = {
+  heading: 'Select An Area of Study',
+  links: [
+    {
+      img: algImg,
+      heading: 'Mathematics',
+      path: '/courses/mathematics',
+    },
+    {
+      img: reading,
+      heading: 'Reading & Writing',
+      path: '/courses/language',
+    },
+    {
+      img: chem,
+      heading: 'Science',
+      path: '/courses/science',
+    },
+  ],
 };

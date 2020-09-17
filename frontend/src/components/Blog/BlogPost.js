@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import BlogPostSidebar from '../MidSection/BlogPostSidebar';
-import { blogPostPageElements } from '../../data/Blog/Blog';
 import NewFooter from '../Footer/NewFooter';
-import { getBlogPosts } from '../../features/blogs/blogs';
 import Spinner from '../Spinner/Spinner';
+import { useDispatch, useSelector } from 'react-redux';
+import { blogPostPageElements } from '../../data/Blog/Blog';
+import { getBlogPosts } from '../../features/blogs/blogs';
 
 const BlogPost = ({ match }) => {
   const { blogs, loading } = useSelector((state) => state.blogs);

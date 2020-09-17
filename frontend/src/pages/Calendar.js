@@ -1,12 +1,9 @@
 import React from 'react';
 import NoSidebar from '../components/MidSection/NoSidebar';
-import NewNavbar from '../components/Navbar/NewNavbar';
-import { navInfo } from '../data/Navbar/Navbar';
 
 const Calendar = () => {
   return (
     <>
-      <NewNavbar info={navInfo} />
       <NoSidebar heading="Book Your Consultation">
         <div className="calendar">
           <iframe

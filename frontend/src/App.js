@@ -32,7 +32,8 @@ if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
-function App() {
+function App({ match }) {
+  console.log(match);
   const dispatch = useDispatch();
   const { isAuthenticated } = useSelector((state) => state.auth);
   console.log(isAuthenticated);
@@ -45,22 +46,51 @@ function App() {
     }
   }, []);
 
-  return (
-    <div className="App" id="page-wrapper">
-      <NavSidebar />
-      <NewNavbar info={!isAuthenticated ? navInfo : loggedInNavInfo} />
-      <Switch>
+  const withContainer = () => {
+    return (
+      <>
+        <NewNavbar info={!isAuthenticated ? navInfo : loggedInNavInfo} />
         <Route exact path="/" component={NewHome} />
         <Route exact path="/courses" component={NewCourses} />
         <Route exact path="/about" component={About} />
         <Route path="/courses/:id" component={Course} />
-        <Route exact path="/contact-us" component={Contact} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/reviews" component={YelpReviews} />
         <Route exact path="/blog" component={Blog} />
         <Route path="/blog/:id" component={BlogPost} />
         <Route exact path="/our-success-stories" component={SuccessStories} />
+      </>
+    );
+  };
+
+  return (
+    <div className="App" id="page-wrapper">
+      <NavSidebar />
+      {/* <NewNavbar info={!isAuthenticated ? navInfo : loggedInNavInfo} /> */}
+      <Switch>
+        {/* <Route
+          path={[
+            '/',
+            '/courses',
+            '/about',
+            '/courses/:id',
+            '/contact-us',
+            '/register',
+            '/login',
+            '/reviews',
+            '/blog',
+            '/blog/:id',
+            '/our-success-stories',
+            '/profile',
+            '/create-profile',
+            '/appointment',
+          ]}
+        >
+          <NewNavbar info={!isAuthenticated ? navInfo : loggedInNavInfo} />{' '}
+        </Route> */}
+        <Route exact path="/contact-us" component={Contact} />
+        <Route component={withContainer} />
         <PrivateRoute exact path="/profile" component={Profile} />
         <PrivateRoute exact path="/create-profile" component={CreateProfile} />
         <PrivateRoute exact path="/edit-profile" component={EditProfile} />
