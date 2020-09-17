@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const AboutSidebar = ({ info }) => {
-  const { tag, mainHeading, mainSubheading, body, images, btns, left } = info;
+  const { tag, mainHeading, mainSubheading, body, btns, left } = info;
 
   return (
     <section id="main" className="wrapper style2">
@@ -80,9 +80,9 @@ const AboutSidebar = ({ info }) => {
                   <h2>{mainHeading}</h2>
                   <p>{mainSubheading}</p>
                 </header>
-                <a href="#" className="image featured">
+                {/* <a href="#" className="image featured">
                   <img src="images/pic01.jpg" alt="" />
-                </a>
+                </a> */}
                 {body.map((bodyEl, index) => {
                   return (
                     <div key={index}>

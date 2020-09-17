@@ -66,6 +66,7 @@ function App() {
           <Route exact path="/blog" component={Blog} />
           <Route path="/blog/:id" component={BlogPost} />
           <Route exact path="/our-success-stories" component={SuccessStories} />
+          <PrivateRoute exact path="/profile" component={Profile} />
           <Error component={Error} />
         </Switch>
       </>
@@ -77,11 +78,10 @@ function App() {
       <NavSidebar />
       {/* <NewNavbar info={!isAuthenticated ? navInfo : loggedInNavInfo} /> */}
       {/* <Switch> */}
-      <Route exact path="/contact-us" component={Contact} />
-      <PrivateRoute exact path="/profile" component={Profile} />
       <PrivateRoute exact path="/create-profile" component={CreateProfile} />
       <PrivateRoute exact path="/edit-profile" component={EditProfile} />
       <UserPrivateRoute exact path="/appointment" component={Calendar} />
+      <Route exact path="/contact-us" component={Contact} />
       <Route component={withContainer} />
       {/* </Switch> */}
     </div>

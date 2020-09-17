@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { getCurrentProfile } from '../features/tutors/profile';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
-import NewNavbar from '../components/Navbar/NewNavbar';
 import NoSidebar from '../components/MidSection/NoSidebar';
 import { errorFalse } from '../features/auth/auth';
 
@@ -11,18 +10,12 @@ const Profile = () => {
   const { profile } = useSelector((state) => state.profile);
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
-  const navInfo = {
-    heading: 'Study Wizards Private Tutoring',
-    subheading: 'Thank You For Your Efforts',
-  };
-
   useEffect(() => {
     dispatch(errorFalse());
     dispatch(getCurrentProfile());
   }, []);
   return (
     <>
-      <NewNavbar info={navInfo} />
       <NoSidebar heading="Your Profile">
         <div className="container ">
           <div className="row">
