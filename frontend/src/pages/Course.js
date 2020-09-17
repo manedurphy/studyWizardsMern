@@ -5,12 +5,14 @@ import Spinner from '../components/Spinner/Spinner';
 import { FaLaptop, FaUserAlt, FaBookReader } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTutors } from '../features/tutors/tutors';
+import { errorFalse } from '../features/auth/auth';
 
 const Course = ({ match }) => {
   const dispatch = useDispatch();
   const { tutors, loading } = useSelector((state) => state.tutors);
 
   useEffect(() => {
+    dispatch(errorFalse());
     dispatch(getTutors(match.params.id));
   }, []);
 

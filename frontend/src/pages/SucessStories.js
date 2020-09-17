@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NewFooter from '../components/Footer/NewFooter';
 import NewNavbar from '../components/Navbar/NewNavbar';
 import NavSidebar from '../components/Navbar/NavSidebar';
@@ -9,8 +9,15 @@ import {
   stories,
 } from '../components/../data/SuccessStories/SuccessStories';
 import { blogLinks, blogPostPageElements } from '../data/Blog/Blog';
+import { errorFalse } from '../features/auth/auth';
+import { useDispatch } from 'react-redux';
 
 const SucessStories = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(errorFalse());
+  });
   return (
     <>
       <NavSidebar />

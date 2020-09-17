@@ -3,10 +3,14 @@ import NoSidebar from '../components/MidSection/NoSidebar';
 import NewFooter from '../components/Footer/NewFooter';
 import { Link } from 'react-router-dom';
 import { blogLinks } from '../data/Blog/Blog';
+import { useDispatch } from 'react-redux';
+import { errorFalse } from '../features/auth/auth';
 
 const Blog = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
     window.scrollTo(0, 0);
+    dispatch(errorFalse());
   }, []);
 
   return (

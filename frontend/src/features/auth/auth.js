@@ -10,6 +10,7 @@ const authSlice = createSlice({
     token: localStorage.getItem('token'),
     isAuthenticated: false,
     loading: false,
+    error: false,
     errors: [],
   },
   reducers: {
@@ -37,6 +38,12 @@ const authSlice = createSlice({
       state.loading = false;
       state.token = null;
     },
+    errorTrue: (state) => {
+      state.error = true;
+    },
+    errorFalse: (state) => {
+      state.error = false;
+    },
   },
 });
 
@@ -47,6 +54,8 @@ export const {
   removeError,
   authorized,
   deAuthorize,
+  errorTrue,
+  errorFalse,
 } = authSlice.actions;
 
 export const register = (body, history) => async (dispatch) => {

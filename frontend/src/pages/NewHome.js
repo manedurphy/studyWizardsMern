@@ -4,19 +4,19 @@ import Intro from '../components/MidSection/Intro';
 import Highlights from '../components/MidSection/Highlights';
 import NewFooter from '../components/Footer/NewFooter';
 import { Link } from 'react-router-dom';
-import NewNavbar from '../components/Navbar/NewNavbar';
-import NavSidebar from '../components/Navbar/NavSidebar';
-import { intro, highlights, paths, navInfo } from '../data/NewHome/NewHome';
+import { intro, highlights, paths } from '../data/NewHome/NewHome';
+import { errorFalse } from '../features/auth/auth';
+import { useDispatch } from 'react-redux';
 
 const NewHome = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
     window.scrollTo(0, 0);
+    dispatch(errorFalse());
   }, []);
 
   return (
     <>
-      <NavSidebar />
-      <NewNavbar info={navInfo} />
       {/* Intro */}
       <Intro info={intro} />
       {/* Main */}

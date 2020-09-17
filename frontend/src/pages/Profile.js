@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 import NewNavbar from '../components/Navbar/NewNavbar';
 import NoSidebar from '../components/MidSection/NoSidebar';
+import { errorFalse } from '../features/auth/auth';
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -16,8 +17,9 @@ const Profile = () => {
   };
 
   useEffect(() => {
+    dispatch(errorFalse());
     dispatch(getCurrentProfile());
-  }, [dispatch]);
+  }, []);
   return (
     <>
       <NewNavbar info={navInfo} />

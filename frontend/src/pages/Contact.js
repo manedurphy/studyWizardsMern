@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import NewFooter from '../components/Footer/NewFooter';
+import { errorFalse } from '../features/auth/auth';
 
 const Contact = () => {
+  const dispatch = useDispatch();
   const { isAuthenticated } = useSelector((state) => state.auth);
 
   const homeBtn = (
@@ -14,6 +16,7 @@ const Contact = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    dispatch(errorFalse());
   }, []);
   return (
     <>

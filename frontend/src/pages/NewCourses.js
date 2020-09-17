@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 import NewCoursesBody from '../components/MidSection/NewCoursesBody';
 import NavSidebar from '../components/Navbar/NavSidebar';
-import { info, paths } from '../data/NewCourses/NewCourses';
 import { newCoursesPageElements } from '../data/NewCourses/NewCourses';
+import { errorFalse } from '../features/auth/auth';
+import { useDispatch } from 'react-redux';
 
 const NewCourses = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
     window.scrollTo(0, 0);
+    dispatch(errorFalse());
   }, []);
 
   return (

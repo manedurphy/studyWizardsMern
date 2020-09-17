@@ -1,19 +1,14 @@
-import React from 'react';
-import NewNavbar from '../components/Navbar/NewNavbar';
-import NavSidebar from '../components/Navbar/NavSidebar';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { errorTrue } from '../features/auth/auth';
 
 const Error = () => {
-  const navInfo = {
-    heading: '404 Page Not Found...',
-    subheading: 'Please Return to the Homepage',
-  };
+  const dispatch = useDispatch();
 
-  return (
-    <>
-      <NavSidebar />
-      <NewNavbar info={navInfo} />
-    </>
-  );
+  useEffect(() => {
+    dispatch(errorTrue());
+  }, []);
+  return <></>;
 };
 
 export default Error;
