@@ -10,13 +10,13 @@ const Highlights = ({ info }) => {
           <div className="row aln-center">
             {info.links.map((el, index) => {
               return (
-                <div className="col-4 col-12-medium">
-                  <section className="highlight" key={index}>
-                    <Link path={el.path} className="image featured">
+                <div className="col-4 col-12-medium" key={index}>
+                  <section className="highlight">
+                    <Link to={el.path} className="image featured">
                       <img src={el.img} alt="course" />
                     </Link>
                     <h3>
-                      <Link path={el.path} style={{ color: '#60479c' }}>
+                      <Link to={el.path} style={{ color: '#60479c' }}>
                         {el.heading}
                       </Link>
                     </h3>

@@ -1,5 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { courseInfo } from '../../data/Course/Course';
+import { createSlice } from '@reduxjs/toolkit';
 
 const tutorsSlice = createSlice({
   name: 'tutors',
@@ -12,7 +13,7 @@ const tutorsSlice = createSlice({
       action.payload.forEach((tutor) => state.tutors.push(tutor));
       state.loading = false;
     },
-    failTutors: (state, action) => {
+    failTutors: (state) => {
       state.loading = false;
     },
     clearTutors: (state) => {
@@ -23,7 +24,7 @@ const tutorsSlice = createSlice({
 
 const { successTutors, failTutors, clearTutors } = tutorsSlice.actions;
 
-export const getTutors = (category, subjects) => async (dispatch) => {
+export const getTutors = (category) => async (dispatch) => {
   try {
     dispatch(clearTutors());
     const res = await axios.get('/api/profile');
@@ -32,7 +33,7 @@ export const getTutors = (category, subjects) => async (dispatch) => {
     const tutorTeachesCategory = (tutor) => {
       let result = false;
 
-      subjects.forEach((subject) => {
+      courseInfo[category].forEach((subject) => {
         if (tutor.subjects.indexOf(subject) !== -1) {
           result = true;
         }

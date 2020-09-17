@@ -1,48 +1,25 @@
 import React, { useEffect } from 'react';
+import NewFooter from '../components/Footer/NewFooter';
+import NoSidebar from '../components/MidSection/NoSidebar';
+import Spinner from '../components/Spinner/Spinner';
 import { FaLaptop, FaUserAlt, FaBookReader } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTutors } from '../features/tutors/tutors';
-import { courseInfo } from '../data/Course/Course';
-import Spinner from '../components/Spinner/Spinner';
-import NewNavbar from '../components/Navbar/NewNavbar';
-import NoSidebar from '../components/MidSection/NoSidebar';
-import NewFooter from '../components/Footer/NewFooter';
-import NavSidebar from '../components/Navbar/NavSidebar';
 
 const Course = ({ match }) => {
   const dispatch = useDispatch();
   const { tutors, loading } = useSelector((state) => state.tutors);
-  const info = {
-    heading: match.params.id,
-    subheading:
-      match.params.id === 'mathematics'
-        ? 'Study Wizards Tutors are “Mathemagicians” Who will Give your Child the Boost They Need'
-        : match.params.id === 'science'
-        ? 'Affordable Private Science Tutoring in San Jose and Silicon Valley'
-        : 'Affordable Private Reading & Writing Tutoring in San Jose and Silicon Valley',
-  };
 
   useEffect(() => {
-    dispatch(getTutors(match.params.id, courseInfo[match.params.id]));
+    dispatch(getTutors(match.params.id));
   }, []);
 
   return loading ? (
     <Spinner />
   ) : (
     <>
-      <NavSidebar />
-      <NewNavbar info={info} />
       <NoSidebar heading={`Meet Our ${match.params.id} Tutors`}>
         <div>
-          {/* <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              marginBottom: '2rem',
-              fontSize: '2rem',
-              textTransform: 'capitalize',
-            }}
-          ></div> */}
           {tutors.map((tutor) => {
             return (
               <div key={tutor._id}>
