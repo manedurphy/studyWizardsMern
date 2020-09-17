@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NewFooter from '../components/Footer/NewFooter';
 import AboutSidebar from '../components/MidSection/AboutSidebar';
-import NewNavbar from '../components/Navbar/NewNavbar';
-import NavSidebar from '../components/Navbar/NavSidebar';
-import { sidebar, navInfo } from '../data/About/About';
+import { aboutPageElements } from '../data/About/About';
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
-      <NavSidebar />
-      <NewNavbar info={navInfo} />
-      <AboutSidebar info={sidebar} />
+      <AboutSidebar info={aboutPageElements} />
       <NewFooter />
     </>
   );

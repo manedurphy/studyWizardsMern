@@ -34,7 +34,7 @@ const Course = ({ match }) => {
       <NewNavbar info={info} />
       <NoSidebar heading={`Meet Our ${match.params.id} Tutors`}>
         <div>
-          <div
+          {/* <div
             style={{
               display: 'flex',
               justifyContent: 'center',
@@ -42,7 +42,7 @@ const Course = ({ match }) => {
               fontSize: '2rem',
               textTransform: 'capitalize',
             }}
-          ></div>
+          ></div> */}
           {tutors.map((tutor) => {
             return (
               <div key={tutor._id}>

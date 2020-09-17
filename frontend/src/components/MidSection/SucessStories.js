@@ -1,36 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { blogLinks } from '../../data/Blog/Blog';
+import { sidebar } from '../../data/YelpReviews/YelpReviews';
 
 //small change
-const ReviewsSidebar = ({ info }) => {
+const ReviewsSidebar = ({ blogElements, blogLinks, success, stories }) => {
   const {
     img1,
     img2,
     img3,
-    headings,
-    paragraphs,
-    btnHeadingLeft,
-    btnHeadingRight,
-    btnP1,
-    btnP2,
-    btnLink1,
-    btnLink2,
-    icon1,
-    icon2,
     leftHeading1,
     leftHeading2,
     leftHeading3,
     leftSubheading1,
     leftSubheading2,
     leftSubheading3,
-    mainHeading,
-    mainSubheading,
-  } = info;
+    btnLink1,
+    btnLink2,
+  } = blogElements;
+
+  const { mainHeading, mainSubheading } = success;
 
   return (
     <section id="main" className="wrapper style2">
-      <div className="title">Our Reviews</div>
+      <div className="title">Our Success Stories</div>
       <div className="container">
         <div className="row gtr-150">
           <div className="col-4 col-12-medium">
@@ -38,16 +30,17 @@ const ReviewsSidebar = ({ info }) => {
             <div id="sidebar">
               <section className="box">
                 <header>
-                  <h2>{leftHeading1}</h2>
+                  <h2>Meet Our Leaders</h2>
                 </header>
                 <p>
-                  Read about the strategies we implement in order to push our
-                  students towards success. We cover the importance of
-                  developing great study skills as well as stress managemnet and
-                  emotional wellness.
+                  Along with our dedicated tutors, we as members of the Study
+                  Wizards leadership team are fully committed to providing the
+                  right support to help your child grow academically and
+                  personally. We will work with you every step of the way to
+                  help your child achieve their educational goals.
                 </p>
                 <Link
-                  to="/blog"
+                  to="/about"
                   className="button style1"
                   style={{ background: '#60479c' }}
                 >
@@ -138,10 +131,10 @@ const ReviewsSidebar = ({ info }) => {
                   <img src="images/pic01.jpg" alt="" />
                 </a>
               </article>
-              {headings.map((heading, index) => (
+              {stories.map((story, index) => (
                 <div key={index}>
-                  <h2>{heading}</h2>
-                  <p>{paragraphs[index]}</p>
+                  <h2>Story from {story.author}</h2>
+                  <p>{story.story}</p>
                 </div>
               ))}
               <div className="row gtr-150">
@@ -149,14 +142,14 @@ const ReviewsSidebar = ({ info }) => {
                   <section className="box">
                     <header>
                       <h2>
-                        {btnHeadingLeft}
-                        {icon1}
+                        {sidebar.btnHeadingLeft}
+                        {sidebar.icon1}
                       </h2>
                     </header>
                     <a href="#" className="image featured">
                       <img src="images/pic05.jpg" alt="" />
                     </a>
-                    <p>{btnP1}</p>
+                    <p>{sidebar.btnP1}</p>
                     <a
                       href="https://www.yelp.com/biz/study-wizards-tutoring-san-jose-2?utm_medium=badge_star_rating_reviews&utm_source=biz_review_badge"
                       target="_blank"
@@ -171,8 +164,8 @@ const ReviewsSidebar = ({ info }) => {
                   <section className="box">
                     <header>
                       <h2>
-                        {btnHeadingRight}
-                        {icon2}
+                        {sidebar.btnHeadingRight}
+                        {sidebar.icon2}
                       </h2>
                     </header>
                     <a
@@ -183,7 +176,7 @@ const ReviewsSidebar = ({ info }) => {
                     >
                       <img src="images/pic06.jpg" alt="" />
                     </a>
-                    <p>{btnP2}</p>
+                    <p>{sidebar.btnP2}</p>
                     <a
                       href="https://www.google.com/search?ei=BJJNX4jsOYLSmAXWzJawDg&q=study+wizards+tutoring+california+google+reviews&oq=study+wizards+tutoring+california+google+reviews&gs_lcp=CgZwc3ktYWIQA1DIMljQR2CsSWgDcAB4AIABWYgBlQeSAQIxMpgBAKABAaoBB2d3cy13aXrAAQE&sclient=psy-ab&ved=0ahUKEwiI_s-K1sbrAhUCKaYKHVamBeYQ4dUDCA0&uact=5#lrd=0x808e3497e52fe473:0xddcb817cb831628,1,,,"
                       target="_blank"

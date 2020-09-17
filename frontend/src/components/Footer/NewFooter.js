@@ -145,9 +145,7 @@ const NewFooter = (props) => {
             <div id="copyright">
               <ul>
                 <li>&copy; {year}.</li>
-                <li>
-                  Design: <a href="http://html5up.net">HTML5 UP</a>
-                </li>
+                <li>Study Wizards Tutoring, Inc. All Rights Reserved</li>
               </ul>
             </div>
           </div>

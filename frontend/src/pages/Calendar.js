@@ -1,12 +1,9 @@
 import React from 'react';
 import NoSidebar from '../components/MidSection/NoSidebar';
 import NewNavbar from '../components/Navbar/NewNavbar';
+import { navInfo } from '../data/Navbar/Navbar';
 
 const Calendar = () => {
-  const navInfo = {
-    heading: 'Study Wizards Private Tutoring',
-    subheading: 'Personalized For Success',
-  };
   return (
     <>
       <NewNavbar info={navInfo} />

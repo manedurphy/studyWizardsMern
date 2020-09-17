@@ -1,10 +1,18 @@
 import React from 'react';
+import NewNavbar from '../components/Navbar/NewNavbar';
+import NavSidebar from '../components/Navbar/NavSidebar';
 
 const Error = () => {
+  const navInfo = {
+    heading: '404 Page Not Found...',
+    subheading: 'Please Return to the Homepage',
+  };
+
   return (
-    <div>
-      <h1>hello from error page</h1>
-    </div>
+    <>
+      <NavSidebar />
+      <NewNavbar info={navInfo} />
+    </>
   );
 };
 
