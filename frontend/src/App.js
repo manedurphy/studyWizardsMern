@@ -26,6 +26,7 @@ import {
 import UserPrivateRoute from './components/routing/UserPrivateRoute';
 import NewNavbar from './components/Navbar/NewNavbar';
 import NavSidebar from './components/Navbar/NavSidebar';
+import MyComponent from './pages/WhyStudyWizards';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -64,6 +65,7 @@ function App() {
           <Route exact path="/blog" component={Blog} />
           <Route path="/blog/:id" component={BlogPost} />
           <Route exact path="/our-success-stories" component={SuccessStories} />
+          <Route exact path="/why-study-wizards" component={MyComponent} />
           <PrivateRoute exact path="/profile" component={Profile} />
           <UserPrivateRoute exact path="/appointment" component={Calendar} />
           <Route path="/404" component={Error} />

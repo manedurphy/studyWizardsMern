@@ -30,3 +30,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0dXRvciI6eyJpZCI6I
 
 ###
 GET http://localhost:5000/api/blog/
+
+###
+POST http://localhost:5000/api/auth/send
+Content-Type: application/json
+
+{
+  "message":"Hello"
+}

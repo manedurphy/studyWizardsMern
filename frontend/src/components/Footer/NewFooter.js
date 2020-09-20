@@ -1,12 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { FaYelp, FaGooglePlus, FaFacebook, FaFacebookF } from 'react-icons/fa';
 
 const NewFooter = (props) => {
   let today = new Date();
   let year = today.getFullYear();
   const { loginWithRedirect } = useAuth0();
   const { isAuthenticated } = useSelector((state) => state.auth);
+
+  const dispatch = useDispatch();
+  const [emailSent, setEmailSent] = useState(false);
+  const [responseMsg, setResponseMsg] = useState(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    try {
+      const body = JSON.stringify(formData);
+      e.preventDefault();
+      const res = await axios.post('/api/auth/send', body, {
+        headers: { 'Content-Type': 'application/json' },
+      });
+      setFormData({ ...formData, name: '', email: '', message: '' });
+      setEmailSent(true);
+      setResponseMsg(res.data.msg);
+    } catch (error) {
+      const errors = error.response.data.errors;
+      if (errors) {
+        alert(errors[0].msg);
+      }
+    }
+  };
 
   return (
     <>
@@ -28,7 +61,7 @@ const NewFooter = (props) => {
               <div className="col-6 col-12-medium">
                 {/* Contact Form */}
                 <section>
-                  <form method="post" action="#">
+                  <form onSubmit={handleSubmit}>
                     <div className="row gtr-50">
                       <div className="col-6 col-12-small">
                         <input
@@ -36,6 +69,9 @@ const NewFooter = (props) => {
                           name="name"
                           id="contact-name"
                           placeholder="Name"
+                          required
+                          value={formData.name}
+                          onChange={handleChange}
                         />
                       </div>
                       <div className="col-6 col-12-small">
@@ -44,14 +80,24 @@ const NewFooter = (props) => {
                           name="email"
                           id="contact-email"
                           placeholder="Email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
                         />
                       </div>
                       <div className="col-12">
                         <textarea
                           name="message"
                           id="contact-message"
-                          placeholder='Describe in detail the difficulties you or your child are experiencing. As an alternative you may schedule a consultation through Gmail by clicking the "Booking Appointment" button below!'
+                          placeholder={
+                            !emailSent
+                              ? 'Describe in detail the difficulties you or your child are experiencing. As an alternative you may schedule a consultation through Gmail by clicking the "Booking Appointment" button below!'
+                              : responseMsg
+                          }
+                          required
                           rows="4"
+                          value={formData.message}
+                          onChange={handleChange}
                         ></textarea>
                       </div>
                       <div className="col-12">
@@ -103,7 +149,7 @@ const NewFooter = (props) => {
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            yelp
+                            <FaYelp /> yelp
                           </a>
                           <br />
                           <a
@@ -111,7 +157,7 @@ const NewFooter = (props) => {
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            google reviews
+                            <FaGooglePlus /> google reviews
                           </a>
                           <br />
                           <a
@@ -119,7 +165,7 @@ const NewFooter = (props) => {
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            facebook.com/StudyWizards
+                            <FaFacebookF /> facebook
                           </a>
                         </p>
                       </section>
@@ -128,7 +174,9 @@ const NewFooter = (props) => {
                       <section>
                         <h3 className="icon solid fa-envelope">Email</h3>
                         <p>
-                          <a href="https://www.gmail.com">danem7@gmail.com</a>
+                          <a href="https://www.gmail.com">
+                            mgoldstein@studywizards.com
+                          </a>
                         </p>
                       </section>
                     </div>

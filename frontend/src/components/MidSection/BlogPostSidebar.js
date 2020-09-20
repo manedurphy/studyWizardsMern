@@ -1,8 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 const BlogSidebar = ({ blog, info }) => {
   const { left, btns, tag } = info;
+
+  if (!blog) {
+    return <Redirect to="/404/" />;
+  }
 
   return (
     <section id="main" className="wrapper style2">
